@@ -123,3 +123,104 @@ new Chart(chart2, {
     }
   }
 });
+
+//#1 polar area chart
+const chart1 = document.getElementById("polar-area-1");
+
+const labels = ['Children and youths', 'Elderly', 'Environment', 'Ethnic minorities', 'Immigrants and asylum seekers and refugees', 'Offenders and re-offenders', 'People in poverty', 'People with disabilities', 'People with medical needs', 'People without employment', 'Women and girls'];
+
+const colors = [
+  '#00b4ae', '#f27c38', '#ffd552', '#007b69', '#39627a', 
+  '#86d1d1', '#f59d6a', '#fee07e', '#80bdb4', '#9cb1bd',
+  '#c0deda', '#f9be9b', '#fee9a9', '#ced8de', '#c1e6e7'
+];
+
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Percentage',
+      data: [65, 28, 44, 27, 14, 6, 58, 29, 30, 37, 62],
+      backgroundColor: colors.slice(0, labels.length), // Use the provided colors
+      borderWidth: 1,
+      borderColor: "#E8F6FF",
+      borderRadius: 4, // Corresponds to border radius in pixels
+      hoverBackgroundColor: colors.slice(0, labels.length) // Same colors for hover
+    }
+  ]
+};
+
+// Create the chart instance
+const myChart = new Chart(chart1, {
+  type: 'polarArea',
+  data: data,
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      r: {
+        pointLabels: {
+          display: true,
+          centerPointLabels: true,
+          font: {
+            size: 16,
+            family: 'Open Sans', // Set Open Sans font for axis labels
+          }
+        },
+        ticks: {
+          font: {
+            family: 'Open Sans', // Set Open Sans font for radial ticks
+          },
+          callback: function(value) {
+            return value + '%'; // Append percent symbol to radial axis labels
+          }
+        }
+      }
+    },
+    plugins: {
+      legend: {
+        display: false // Hide the legend
+      },
+      tooltip: {
+        callbacks: {
+          label: function(tooltipItem) {
+            return tooltipItem.raw + '%'; // Append percentage symbol to tooltips
+          }
+        },
+        titleFont: {
+          family: 'Open Sans', // Set Open Sans for tooltip title
+        },
+        bodyFont: {
+          family: 'Open Sans', // Set Open Sans for tooltip body
+        }
+      },
+      datalabels: {
+        display: true,
+        color: '#000', // Label color
+        opacity: 0, // Start with opacity 0 (invisible)
+        formatter: function(value) {
+          return value + '%'; // Append percentage symbol
+        },
+        font: {
+          family: 'Open Sans', // Set Open Sans for data labels
+        },
+        clip: false
+      }
+    },
+    animation: {
+      animateRotate: true, // Ensures the chart sections rotate during animation
+      onProgress: function(animation) {
+        // Gradually reveal labels as chart is animated
+        let progress = animation.currentStep / animation.numSteps;
+        myChart.options.plugins.datalabels.opacity = progress; // Adjust label opacity based on progress
+        myChart.update(); // Update the chart to apply opacity changes
+      },
+      delay: function(context) {
+        const index = context.dataIndex; // Get the index of the section
+        const delayBetweenPoints = 150; // Delay between sections in ms
+        return index * delayBetweenPoints; // Each section appears with a delay
+      },
+      duration: 1000 // Duration of the entire animation for each slice
+    }
+  }
+});
