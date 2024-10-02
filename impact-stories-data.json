@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "created_at": 1726140000000,
+    "Story_Title": "Secure co-funders to advance their projects in Asia",
+    "Story_Description": "AVPN supported its member ATE Chandra Foundation (ATECF) in identifying new partners to scale water rejuvenation projects in Maharashtra, India, which was launched by a consortium including ATECF, NITI Aayog, and the government. During the South Asia Summit 2023, AVPN hosted a session on water quality, where ATECF highlighted challenges and sought collaboration.\n\nCharities Aid Foundation (CAF), who attended the session, expressed interest and later partnered with the consortium to co-fund the initiative in two additional districts in Maharashtra. This partnership scales the projects' impact by leveraging cross-border funding from donors in the US, UK, and Canada, channelled by CAF.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb13e_Secure%20co-funders%20to%20advance%20their%20projects%20in%20Asia.webp",
+    "Sort_Order": 1
+  },
+  {
+    "id": 3,
+    "created_at": 1726140000000,
+    "Story_Title": "Establish partnerships with like-minded organisations for thought leadership",
+    "Story_Description": "AVPN is instrumental in forging partnerships among organizations with aligned missions. During the South Asia Summit 2023, AVPN hosted a session on water quality where ATECF presented its challenges. This event led to a partnership with Charities Aid Foundation (CAF), which later co-funded the water rejuvenation initiative, illustrating how AVPN's platform fosters collaboration among organizations committed to social impact.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3aab73c5703bfcc21e_Establish%20partnerships%20with%20like-minded%20organisations%20for%20thought%20leadership.webp",
+    "Sort_Order": 2
+  },
+  {
+    "id": 4,
+    "created_at": 1726140000000,
+    "Story_Title": "Lead a collective movement to drive policy agenda",
+    "Story_Description": "AVPN empowers its members to take a leadership role in collective movements that advocate for inclusive policies. By organizing high-level forums and summits, AVPN creates opportunities for members like ATECF to influence policy agendas, such as water quality initiatives in India, and collaborate with government bodies like NITI Aayog to drive systemic change.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb11c_Lead%20a%20collective%20movement%20to%20drive%20policy%20agenda.webp",
+    "Sort_Order": 3
+  },
+  {
+    "id": 5,
+    "created_at": 1726140000000,
+    "Story_Title": "Amplify their work and influence stakeholders in high-level forums",
+    "Story_Description": "AVPN amplifies the work of its members by providing platforms where they can engage with key stakeholders. The South Asia Summit 2023 is a prime example where ATECF was able to highlight its work on water rejuvenation to a global audience, attracting interest and collaboration from international organizations like CAF, which further enhanced the initiative's impact.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca39bfc12ceb1fd9c495_Amplify%20their%20work%20and%20influence%20stakeholders%20in%20high-level%20forums.webp",
+    "Sort_Order": 4
+  },
+  {
+    "id": 6,
+    "created_at": 1726140000000,
+    "Story_Title": "Learn best practices from other AVPN members",
+    "Story_Description": "AVPN supports its members in refining their social investment strategies by offering access to a network of experts and peers. Through collaboration and knowledge-sharing at events like the South Asia Summit, members can learn from successful projects like ATECF's water rejuvenation initiative, helping them to optimize their approaches and increase their social impact.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca38c0e226cdc992a7a7_Learn%20best%20practices%20from%20other%20AVPN%20members.jpg",
+    "Sort_Order": 5
+  },
+  {
+    "id": 7,
+    "created_at": 1726140000000,
+    "Story_Title": "Identify impactful solutions endorsed by other AVPN members",
+    "Story_Description": "AVPN's philanthropic funds provide members with the financial resources needed to drive impactful initiatives. By leveraging these funds, members can launch or scale projects, such as ATECF's water rejuvenation efforts in Maharashtra, ensuring that they have the necessary support to achieve their goals.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca394102a141d132220c_Identify%20impactful%20solutions%20endorsed%20by%20other%20AVPN%20members.webp",
+    "Sort_Order": 6
+  },
+  {
+    "id": 8,
+    "created_at": 1726140000000,
+    "Story_Title": "Contribute to multiplying impact through AVPN Philanthropic Funds",
+    "Story_Description": "AVPN's network allows members to access funding opportunities from other members. ATECF's partnership with CAF, facilitated by AVPN, is an example of how these connections can result in significant financial support from other organizations within the AVPN network, enabling the scaling of impactful projects.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca398fbc5fb41657731f_Contribute%20to%20multiplying%20impact%20through%20AVPN%20Philanthropic%20Funds.webp",
+    "Sort_Order": 7
+  },
+  {
+    "id": 9,
+    "created_at": 1726200000000,
+    "Story_Title": "Form a coalition to collectively move capital towards impact",
+    "Story_Description": "AVPN encourages the formation of coalitions among its members to pool resources and direct capital towards impactful initiatives. The consortium formed by ATECF, NITI Aayog, CAF, and the government of Maharashtra is an example of such a coalition, where collective efforts and cross-border funding were channeled towards scaling water rejuvenation projects, thereby creating a greater impact.",
+    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3a8fbc5fb4165773dc_Form%20a%20coalition%20to%20collectively%20move%20capital%20towards%20impact.webp",
+    "Sort_Order": 8
+  }
+]
