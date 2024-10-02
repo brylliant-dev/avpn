@@ -1,0 +1,23 @@
+<!-- need to use this script!!!! !-->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<style>
+code{
+	border-radius: .5rem !important;
+  font-size: .875rem !important;
+}
+
+  #polar-area-1, #bubble-chart-1 {
+    width: 100%; /* Ensures the chart takes up 100% of its parent container's width */
+    height: 450px; /* Adjust this value to control the chart's height dynamically */
+  }
+
+  /* Optionally, use media queries to make it more responsive on smaller screens */
+  @media (max-width: 600px) {
+    #polar-area-1, #bubble-chart-1  {
+      height: 300px; /* Reduce height on smaller screens */
+    }
+  }
+</style>
