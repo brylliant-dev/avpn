@@ -40,7 +40,7 @@ function getTestimonials() {
                 testimonial.removeAttribute('id');
 
                 // Remove all classes and reassign only the base class
-                //testimonial.className = baseClass;
+                testimonial.className = baseClass;
 
                 // Fill in the member name, designation, quote, and image (if available)
                 testimonial.querySelector('.member-name').textContent = testimonialItem['Member Name'];
@@ -56,7 +56,7 @@ function getTestimonials() {
                 }
 
                 // Apply a unique shade based on the index
-                let shadeColor = getShadeOfColor('#F6A370', index, data.length);
+                let shadeColor = interpolateColor('#F6A370', '#CF672E', index / (data.length - 1));
                 testimonial.style.backgroundColor = shadeColor;
 
                 // Append the cloned testimonial to the container
@@ -80,21 +80,31 @@ document.addEventListener('DOMContentLoaded', function() {
     getTestimonials();
 });
 
-// Function to generate shades of a color
-function getShadeOfColor(color, index, total) {
-    // Convert hex to RGB
-    let r = parseInt(color.slice(1, 3), 16);
-    let g = parseInt(color.slice(3, 5), 16);
-    let b = parseInt(color.slice(5, 7), 16);
+// Function to interpolate between two colors
+function interpolateColor(color1, color2, factor) {
+    // Parse the hex colors
+    const c1 = hexToRgb(color1);
+    const c2 = hexToRgb(color2);
 
-    // Calculate the shading factor
-    let factor = index / total * 0.5; // Adjust the factor for shading (0.5 for darker shades)
+    // Interpolate between the two colors
+    const r = Math.round(c1.r + factor * (c2.r - c1.r));
+    const g = Math.round(c1.g + factor * (c2.g - c1.g));
+    const b = Math.round(c1.b + factor * (c2.b - c1.b));
 
-    // Apply the shading factor to the RGB values
-    r = Math.round(r * (1 - factor));
-    g = Math.round(g * (1 - factor));
-    b = Math.round(b * (1 - factor));
-
-    // Convert back to hex and return the shaded color
+    // Return the new color as an rgb string
     return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Function to convert hex to RGB
+function hexToRgb(hex) {
+    // Convert shorthand hex (#abc) to full form (#aabbcc)
+    if (hex.length === 4) {
+        hex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`;
+    }
+    const bigint = parseInt(hex.slice(1), 16);
+    return {
+        r: (bigint >> 16) & 255,
+        g: (bigint >> 8) & 255,
+        b: bigint & 255
+    };
 }
