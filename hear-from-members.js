@@ -40,7 +40,7 @@ function getTestimonials() {
                 testimonial.removeAttribute('id');
 
                 // Remove all classes and reassign only the base class
-                testimonial.className = baseClass;
+                //testimonial.className = baseClass;
 
                 // Fill in the member name, designation, quote, and image (if available)
                 testimonial.querySelector('.member-name').textContent = testimonialItem['Member Name'];
