@@ -56,7 +56,7 @@ function getTestimonials() {
                 }
 
                 // Apply a unique shade based on the index
-                let shadeColor = getShadeOfColor('#F27C38', index, data.length);
+                let shadeColor = getShadeOfColor('#F6A370', index, data.length);
                 testimonial.style.backgroundColor = shadeColor;
 
                 // Append the cloned testimonial to the container
