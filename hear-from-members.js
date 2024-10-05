@@ -28,9 +28,6 @@ function getTestimonials() {
             // Get the template testimonial element that will be cloned
             const templateTestimonial = document.getElementById('testimonial');
 
-            // Get the base class from the template testimonial
-            const baseClass = templateTestimonial.classList[0]; // Assume the base class is the first one
-
             // Loop through each testimonial item
             data.forEach((testimonialItem, index) => {
                 // Clone the template testimonial
@@ -38,9 +35,6 @@ function getTestimonials() {
 
                 // Remove the id attribute since IDs must be unique
                 testimonial.removeAttribute('id');
-
-                // Remove all classes and reassign only the base class
-                testimonial.className = baseClass;
 
                 // Fill in the member name, designation, quote, and image (if available)
                 testimonial.querySelector('.member-name').textContent = testimonialItem['Member Name'];
