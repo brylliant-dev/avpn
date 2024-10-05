@@ -3,60 +3,70 @@
         "ID": 1,
         "Member Name": "John Doe",
         "Member Designation": "Director of Global Strategy, Global Markets Inc.",
-        "Member Quote": "Our collaboration with AVPN has been pivotal in expanding our impact. The strategic support and extensive network have allowed us to reach new heights in addressing key challenges in the market."
+        "Member Quote": "Our collaboration with AVPN has been pivotal in expanding our impact. The strategic support and extensive network have allowed us to reach new heights in addressing key challenges in the market.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33f44c9d9dcde0cd3a7_image.png"
     },
     {
         "ID": 2,
         "Member Name": "Jane Smith",
         "Member Designation": "Head of Corporate Relations, Global Markets Group",
-        "Member Quote": "AVPN's commitment to fostering innovation and providing vital resources has transformed the way we approach partnerships. It's been an incredible journey working with them."
+        "Member Quote": "AVPN's commitment to fostering innovation and providing vital resources has transformed the way we approach partnerships. It's been an incredible journey working with them.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3406f15136da45a9edd_image-1.png"
     },
     {
         "ID": 3,
         "Member Name": "Ahmed Ismail",
         "Member Designation": "Chief Executive Officer, Southeast Asia Markets Co.",
-        "Member Quote": "AVPN's guidance and expertise have been instrumental in the success of our sustainability initiatives. Their network and resources have significantly amplified our efforts across the region."
+        "Member Quote": "AVPN's guidance and expertise have been instrumental in the success of our sustainability initiatives. Their network and resources have significantly amplified our efforts across the region.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33eb83ab0f475137623_image-2.png"
     },
     {
         "ID": 4,
         "Member Name": "Maria Lim",
         "Member Designation": "Managing Director, Southeast Asia Markets Holdings",
-        "Member Quote": "Working with AVPN has allowed us to bring our community-driven projects to a much larger audience. Their deep understanding of the region's needs has been invaluable."
+        "Member Quote": "Working with AVPN has allowed us to bring our community-driven projects to a much larger audience. Their deep understanding of the region's needs has been invaluable.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3403bdb58e7fc6b24ba_image-3.png"
     },
     {
         "ID": 5,
         "Member Name": "Rahul Nair",
         "Member Designation": "Senior Vice President, South Asia Markets Ltd.",
-        "Member Quote": "Our collaboration with AVPN has been crucial in driving social impact in South Asia. Their innovative approach has helped us address pressing issues more effectively."
+        "Member Quote": "Our collaboration with AVPN has been crucial in driving social impact in South Asia. Their innovative approach has helped us address pressing issues more effectively.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33f3622e22dbd3fff6f_image-4.png"
     },
     {
         "ID": 6,
         "Member Name": "Priya Kapoor",
         "Member Designation": "Regional Head, South Asia Markets Enterprises",
-        "Member Quote": "AVPN's robust network and expertise in social impact initiatives have elevated our projects, enabling us to make a greater difference in the communities we serve."
+        "Member Quote": "AVPN's robust network and expertise in social impact initiatives have elevated our projects, enabling us to make a greater difference in the communities we serve.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c340b4f89b91b0b5fd17_image-5.png"
     },
     {
         "ID": 7,
         "Member Name": "Hiroshi Tanaka",
         "Member Designation": "Chief Operations Officer, Northeast Asia Markets Corporation",
-        "Member Quote": "AVPN has been an indispensable partner in helping us create meaningful change. Their deep knowledge of the Northeast Asia landscape has empowered us to tackle critical challenges."
+        "Member Quote": "AVPN has been an indispensable partner in helping us create meaningful change. Their deep knowledge of the Northeast Asia landscape has empowered us to tackle critical challenges.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c34079f551a16bee426c_image-6.png"
     },
     {
         "ID": 8,
         "Member Name": "Kim So-yeon",
         "Member Designation": "Vice President, Northeast Asia Markets International",
-        "Member Quote": "The collaborative efforts with AVPN have been instrumental in scaling our impact. Their support has allowed us to make a measurable difference in the lives of many."
+        "Member Quote": "The collaborative efforts with AVPN have been instrumental in scaling our impact. Their support has allowed us to make a measurable difference in the lives of many.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3413bdb58e7fc6b2639_image-7.png"
     },
     {
         "ID": 9,
         "Member Name": "Youssef Al-Mansouri",
         "Member Designation": "Managing Partner, Western Asia Markets Group",
-        "Member Quote": "Partnering with AVPN has transformed the way we engage with local communities. Their dedication to social impact has been inspiring and invaluable to our success."
+        "Member Quote": "Partnering with AVPN has transformed the way we engage with local communities. Their dedication to social impact has been inspiring and invaluable to our success.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33fb83ab0f4751376f1_image-8.png"
     },
     {
         "ID": 10,
         "Member Name": "Leila Farahani",
         "Member Designation": "Director of Communications, Western Asia Markets Corp.",
-        "Member Quote": "AVPN's strategic approach has been critical in driving forward our initiatives. Their commitment to creating sustainable impact aligns perfectly with our mission."
+        "Member Quote": "AVPN's strategic approach has been critical in driving forward our initiatives. Their commitment to creating sustainable impact aligns perfectly with our mission.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3408320a06d98f878a6_image-9.png"
     }
 ]
