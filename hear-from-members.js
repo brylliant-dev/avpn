@@ -1,5 +1,5 @@
 // Create a variable for the JSON file URL
-let testimonialsUrl = new URL('/hear-from-members.json');
+let testimonialsUrl = new URL('https://brylliant-dev.github.io/avpn/hear-from-members.json');
 
 // Define a function to get testimonials data
 function getTestimonials() {
