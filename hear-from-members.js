@@ -55,6 +55,10 @@ function getTestimonials() {
                     img.remove(); // Optionally remove the image element if not available
                 }
 
+                // Apply a unique shade based on the index
+                let shadeColor = getShadeOfColor('#F27C38', index, data.length);
+                testimonial.style.backgroundColor = shadeColor;
+
                 // Append the cloned testimonial to the container
                 testimonialsContainer.appendChild(testimonial);
             });
@@ -75,3 +79,22 @@ function getTestimonials() {
 document.addEventListener('DOMContentLoaded', function() {
     getTestimonials();
 });
+
+// Function to generate shades of a color
+function getShadeOfColor(color, index, total) {
+    // Convert hex to RGB
+    let r = parseInt(color.slice(1, 3), 16);
+    let g = parseInt(color.slice(3, 5), 16);
+    let b = parseInt(color.slice(5, 7), 16);
+
+    // Calculate the shading factor
+    let factor = index / total * 0.5; // Adjust the factor for shading (0.5 for darker shades)
+
+    // Apply the shading factor to the RGB values
+    r = Math.round(r * (1 - factor));
+    g = Math.round(g * (1 - factor));
+    b = Math.round(b * (1 - factor));
+
+    // Convert back to hex and return the shaded color
+    return `rgb(${r}, ${g}, ${b})`;
+}
