@@ -36,9 +36,10 @@ function getReflections() {
                 // Remove the id attribute since IDs must be unique
                 reflection.removeAttribute('id');
 
-                // Fill in the rep name, designation, reflection, and image (if available)
+                // Fill in the rep name, designation, location, reflection, and image (if available)
                 reflection.querySelector('.rep-name').textContent = reflectionItem['Rep Name'];
                 reflection.querySelector('.rep-designation').textContent = reflectionItem['Rep Designation'];
+                reflection.querySelector('.rep-location').textContent = reflectionItem['Rep Location']; // Assuming location field
                 reflection.querySelector('.rep-reflection').textContent = reflectionItem['Rep Reflection'];
 
                 // Assuming there's a rep image, set the src if the field exists
