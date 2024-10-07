@@ -22,21 +22,27 @@ function getReflections() {
             // Sort reflections by ID
             data.sort((a, b) => a.ID - b.ID);
 
-            // Get the container where the reflections will be placed
+            // Get the containers where the reflections and slides will be placed
             const reflectionsContainer = document.getElementById("reflections-container");
+            const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
 
-            // Get the template reflection element that will be cloned
+            // Get the template reflection element and slide element that will be cloned
             const templateReflection = document.getElementById('reflection');
+            const templateSlide = document.getElementById('ref-slide');
 
             // Loop through each reflection item
             data.forEach((reflectionItem) => {
                 // Clone the template reflection
                 const reflection = templateReflection.cloneNode(true);
 
-                // Remove the id attribute since IDs must be unique
-                reflection.removeAttribute('id');
+                // Clone the template slide
+                const slide = templateSlide.cloneNode(true);
 
-                // Fill in the rep name, designation, reflection, and image (if available)
+                // Remove the id attribute since IDs must be unique for both reflection and slide
+                reflection.removeAttribute('id');
+                slide.removeAttribute('id');
+
+                // Fill in the rep name, designation, reflection, and image (if available) in reflection
                 reflection.querySelector('.rep-name').textContent = reflectionItem['Rep Name'];
                 reflection.querySelector('.rep-designation').textContent = reflectionItem['Rep Designation'];
                 reflection.querySelector('.rep-reflection').textContent = reflectionItem['Rep Reflection'];
@@ -54,12 +60,16 @@ function getReflections() {
                     imgElements.forEach(img => img.remove());
                 }
 
-                // Append the cloned reflection to the container
+                // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
+
+                // Append the cloned slide to the swiper wrapper container
+                slidesContainer.appendChild(slide);
             });
 
-            // Optionally, remove the original template reflection from the DOM if not needed
+            // Optionally, remove the original template reflection and slide from the DOM if not needed
             templateReflection.remove();
+            templateSlide.remove();
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
