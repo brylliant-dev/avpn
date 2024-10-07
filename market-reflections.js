@@ -98,7 +98,6 @@ function getReflections() {
             // Initialize SwiperJS after appending all slides
             const swiper = new Swiper('.reflections_swiper', {
                 slidesPerView: 1, // Show only one slide at a time
-                spaceBetween: 10,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
