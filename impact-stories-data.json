@@ -1,66 +1,58 @@
 [
-  {
-    "id": 1,
-    "created_at": 1726140000000,
-    "Story_Title": "Secure co-funders to advance their projects in Asia",
-    "Story_Description": "AVPN supported its member ATE Chandra Foundation (ATECF) in identifying new partners to scale water rejuvenation projects in Maharashtra, India, which was launched by a consortium including ATECF, NITI Aayog, and the government. During the South Asia Summit 2023, AVPN hosted a session on water quality, where ATECF highlighted challenges and sought collaboration.\n\nCharities Aid Foundation (CAF), who attended the session, expressed interest and later partnered with the consortium to co-fund the initiative in two additional districts in Maharashtra. This partnership scales the projects' impact by leveraging cross-border funding from donors in the US, UK, and Canada, channelled by CAF.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb13e_Secure%20co-funders%20to%20advance%20their%20projects%20in%20Asia.webp",
-    "Sort_Order": 1
-  },
-  {
-    "id": 3,
-    "created_at": 1726140000000,
-    "Story_Title": "Establish partnerships with like-minded organisations for thought leadership",
-    "Story_Description": "AVPN is instrumental in forging partnerships among organizations with aligned missions. During the South Asia Summit 2023, AVPN hosted a session on water quality where ATECF presented its challenges. This event led to a partnership with Charities Aid Foundation (CAF), which later co-funded the water rejuvenation initiative, illustrating how AVPN's platform fosters collaboration among organizations committed to social impact.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3aab73c5703bfcc21e_Establish%20partnerships%20with%20like-minded%20organisations%20for%20thought%20leadership.webp",
-    "Sort_Order": 2
-  },
-  {
-    "id": 4,
-    "created_at": 1726140000000,
-    "Story_Title": "Lead a collective movement to drive policy agenda",
-    "Story_Description": "AVPN empowers its members to take a leadership role in collective movements that advocate for inclusive policies. By organizing high-level forums and summits, AVPN creates opportunities for members like ATECF to influence policy agendas, such as water quality initiatives in India, and collaborate with government bodies like NITI Aayog to drive systemic change.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb11c_Lead%20a%20collective%20movement%20to%20drive%20policy%20agenda.webp",
-    "Sort_Order": 3
-  },
-  {
-    "id": 5,
-    "created_at": 1726140000000,
-    "Story_Title": "Amplify their work and influence stakeholders in high-level forums",
-    "Story_Description": "AVPN amplifies the work of its members by providing platforms where they can engage with key stakeholders. The South Asia Summit 2023 is a prime example where ATECF was able to highlight its work on water rejuvenation to a global audience, attracting interest and collaboration from international organizations like CAF, which further enhanced the initiative's impact.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca39bfc12ceb1fd9c495_Amplify%20their%20work%20and%20influence%20stakeholders%20in%20high-level%20forums.webp",
-    "Sort_Order": 4
-  },
-  {
-    "id": 6,
-    "created_at": 1726140000000,
-    "Story_Title": "Learn best practices from other AVPN members",
-    "Story_Description": "AVPN supports its members in refining their social investment strategies by offering access to a network of experts and peers. Through collaboration and knowledge-sharing at events like the South Asia Summit, members can learn from successful projects like ATECF's water rejuvenation initiative, helping them to optimize their approaches and increase their social impact.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca38c0e226cdc992a7a7_Learn%20best%20practices%20from%20other%20AVPN%20members.jpg",
-    "Sort_Order": 5
-  },
-  {
-    "id": 7,
-    "created_at": 1726140000000,
-    "Story_Title": "Identify impactful solutions endorsed by other AVPN members",
-    "Story_Description": "AVPN's philanthropic funds provide members with the financial resources needed to drive impactful initiatives. By leveraging these funds, members can launch or scale projects, such as ATECF's water rejuvenation efforts in Maharashtra, ensuring that they have the necessary support to achieve their goals.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca394102a141d132220c_Identify%20impactful%20solutions%20endorsed%20by%20other%20AVPN%20members.webp",
-    "Sort_Order": 6
-  },
-  {
-    "id": 8,
-    "created_at": 1726140000000,
-    "Story_Title": "Contribute to multiplying impact through AVPN Philanthropic Funds",
-    "Story_Description": "AVPN's network allows members to access funding opportunities from other members. ATECF's partnership with CAF, facilitated by AVPN, is an example of how these connections can result in significant financial support from other organizations within the AVPN network, enabling the scaling of impactful projects.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca398fbc5fb41657731f_Contribute%20to%20multiplying%20impact%20through%20AVPN%20Philanthropic%20Funds.webp",
-    "Sort_Order": 7
-  },
-  {
-    "id": 9,
-    "created_at": 1726200000000,
-    "Story_Title": "Form a coalition to collectively move capital towards impact",
-    "Story_Description": "AVPN encourages the formation of coalitions among its members to pool resources and direct capital towards impactful initiatives. The consortium formed by ATECF, NITI Aayog, CAF, and the government of Maharashtra is an example of such a coalition, where collective efforts and cross-border funding were channeled towards scaling water rejuvenation projects, thereby creating a greater impact.",
-    "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3a8fbc5fb4165773dc_Form%20a%20coalition%20to%20collectively%20move%20capital%20towards%20impact.webp",
-    "Sort_Order": 8
-  }
+    {
+        "ID": "1",
+        "Story_Title": "Amplify impact and driving global action through high-level engagement ",
+        "Story_Description": "In 2023, AVPN and Takeda Pharmaceuticals partnered to address Asia's broadening dengue spread, focusing on climate change’s health impact, vaccine equity, and expanding access to healthcare. Through coordinated efforts in Indonesia, Thailand, and India, AVPN convened stakeholders to address the dengue crisis. Inspired by these efforts, BBC Storyworks, along with the WHO Foundation, supported the creation of a mini-documentary showcasing dengue’s human impact in Balikpapan, Indonesia, highlighting the need for urgent public health solutions. Featured at global forums like the World Health Assembly, this initiative amplified the dialogue on dengue prevention and underscored the importance of preventative solutions including vaccination. AVPN’s ability to bring together diverse partners, combined with Takeda’s healthcare leadership, exemplified the power of collective action, and reinforced both organisations’  commitment to building resilient, equitable health systems across Asia.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca39bfc12ceb1fd9c495_Amplify%20their%20work%20and%20influence%20stakeholders%20in%20high-level%20forums.webp",
+        "Sort_Order": "1"
+    },
+    {
+        "ID": "2",
+        "Story_Title": "Learn best practices from other AVPN members",
+        "Story_Description": "SAJIDA Foundation was inspired by the Asia Gender Network's “Principles for Giving with a Gender Lens” to critically evaluate all their programmes and adopt inclusive policies to advance gender equality within the organisation. They reassessed their organisational goals related to gender inclusion and integration and initiated the development of an internal Gender Equality Policy. The Foundation is taking a participatory approach to drafting the policy, where Management collaborates with program staff to establish program indicators, monitoring mechanisms, and more, all within the framework of the new Gender Equality Policy. They have also engaged AVPN to review and provide feedback on the draft policy. This policy reflects the Foundation's commitment to creating a more inclusive workplace for both current and future employees, while also adhering to the first dimension of the Principles.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca38c0e226cdc992a7a7_Learn%20best%20practices%20from%20other%20AVPN%20members.jpg",
+        "Sort_Order": "2"
+    },
+    {
+        "ID": "3",
+        "Story_Title": "Form a coalition to collectively move capital towards impact",
+        "Story_Description": "The Climate x Health: Lighthouse for Asia initiative, a collaboration between AVPN, Bayer Foundation, Centre for Cellular and Molecular Platforms, India Health Fund, and Monash University, emerged post-COP28 to address the urgent intersection of climate and health. The initiative's Opportunity Primer report, launched in April 2024 at AVPN Global Conference in Abu Dhabi, showcased emerging solutions and has elevated awareness on the global stage. By engaging in events like the World Health Assembly and the Forecasting Healthy Futures Summit, the initiative has drawn attention amongst the social investor community. The launch of a USD 5 million Lighthouse Fund planned at COP29 further demonstrates AVPN's commitment to driving innovative climate and health solutions, shaping a healthier and more sustainable future.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3a8fbc5fb4165773dc_Form%20a%20coalition%20to%20collectively%20move%20capital%20towards%20impact.webp",
+        "Sort_Order": "3"
+    },
+    {
+        "ID": "4",
+        "Story_Title": "Establish partnerships with like-minded organisations for thought leadership",
+        "Story_Description": "The Menzies Foundation aspires to amplify a leadership movement.  An important conversation on youth, indigenous women and school leadership with the Economist at the 2023 Global AVPN Conference and follow up discussions with the AVPN Global Leadership Academy, suggests that leadership is one of the most important dimensions of efforts to address the significant challenges ASEAN faces in addressing the SDGs. From the conversations, they will launch the Menzies Foundation & Economist Impact New Leaders: New Challenges Report, which sets the stage for a new conversation about leadership.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3aab73c5703bfcc21e_Establish%20partnerships%20with%20like-minded%20organisations%20for%20thought%20leadership.webp",
+        "Sort_Order": "4"
+    },
+    {
+        "ID": "5",
+        "Story_Title": "Lead a collective movement to help strengthen the growth of women-led MSMEs",
+        "Story_Description": "The Gender Diverse MSMEs Taskforce, launched by AVPN in partnership with Visa Foundation, emerged as a catalyst for change during the G20 presidencies of Indonesia in 2022 and India in 2023. Through sustained engagement and collaboration with leading organisations like the Confederation of Indian Industry, the Taskforce successfully advocated for its recommendations to scale women-led MSMEs. Their recommendations, reflected in the B20 Communiqué, emphasised the need for gender disaggregated data, innovative financial products, increased capacity building support, and financing for climate adaptation. AVPN's ongoing efforts in ASEAN ensure that these critical issues remain at the forefront of policy-making, driving progress for gender-diverse MSMEs across the region.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb11c_Lead%20a%20collective%20movement%20to%20drive%20policy%20agenda.webp",
+        "Sort_Order": "5"
+    },
+    {
+        "ID": "6",
+        "Story_Title": "Identify impactful solutions endorsed by other AVPN members",
+        "Story_Description": "AVPN shortlisted several impactful grantees from our AVPN APAC Sustainability Seed Fund, and notified them of an AVPN member led funding opportunity called  Palladium Challenge Fund 2023.   Uncharted Waters applied for this opportunity and successfully secured follow-on funding. This support has enabled Uncharted Waters to continue its vital work in providing timely risk information to policymakers and the public, empowering informed decision-making and advancing climate action.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca394102a141d132220c_Identify%20impactful%20solutions%20endorsed%20by%20other%20AVPN%20members.webp",
+        "Sort_Order": "6"
+    },
+    {
+        "ID": "7",
+        "Story_Title": "Secure co-funders to advance their projects in Asia",
+        "Story_Description": "AVPN supported ATE Chandra Foundation (ATECF) in identifying partners to scale their rejuvenation of water bodies project in partnership with NITI Aayog through a session that ATECF led at the South Asia Summit 2023. This resulted in Charities Aid Foundation India partnering with them in three districts in the state of Jharkhand and rejuvenating 175 waterbodies, impacting more than 500 farmers who directly carted silt and close to 1.5 lakh people who live in the 130+ villages where the work happened, a testament to the impact of collaborative philanthropy.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca3845de65d9d00eb13e_Secure%20co-funders%20to%20advance%20their%20projects%20in%20Asia.webp",
+        "Sort_Order": "7"
+    },
+    {
+        "ID": "8",
+        "Story_Title": "Contribute to multiplying impact through AVPN Philanthropic Funds",
+        "Story_Description": "With the funding received from the STEM Philanthropic Pooled Fund in 2022, Mantra4Change established 15 low-cost science labs in underserved rural schools in India. Within months, these labs transformed student outcomes, with significant improvements in STEM comprehension and assessment scores.  A student from a supported school advanced through multiple stages to reach the national-level exhibition.  This remarkable success has attracted additional funding and partnerships, demonstrating the power of pooled funding and collaborative philanthropy to create a deep impact and inspire a new generation of women in STEM. The STEM Fund, a collaborative effort by Micron Foundation, Lenovo Foundation, XTX Foundation, BHP Foundation, and Chevron, managed by AVPN, disbursed grants to 6 grantees.",
+        "Story_Image_URL": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/66f4ca398fbc5fb41657731f_Contribute%20to%20multiplying%20impact%20through%20AVPN%20Philanthropic%20Funds.webp",
+        "Sort_Order": "8"
+    }
 ]
