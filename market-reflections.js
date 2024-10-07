@@ -27,6 +27,9 @@ function getReflections() {
             const templateReflection = document.getElementById('reflection');
             const templateSlide = document.getElementById('ref-slide');
 
+            // Array to store IDs for SwiperJS navigation
+            let swiperSlides = [];
+
             // Loop through each reflection item and assign unique ids to match
             data.forEach((reflectionItem, index) => {
                 // Clone the template reflection
@@ -54,7 +57,7 @@ function getReflections() {
                     reflectionImg.remove(); // Remove the image if not available
                 }
 
-                reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
+                reflectionLocation.textContent = reflectionItem['Rep Designation']; // Assuming location is the designation
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
@@ -79,6 +82,9 @@ function getReflections() {
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
 
+                // Store slide ID for navigation
+                swiperSlides.push(slide);
+
                 // --- Add event listener to match #reflection with #ref-slide ---
                 reflection.addEventListener('click', () => {
                     openPopup(index, swiper); // Open popup with the correct slide and control Swiper
@@ -91,7 +97,7 @@ function getReflections() {
 
             // Initialize SwiperJS after appending all slides
             const swiper = new Swiper('.reflections_swiper', {
-                slidesPerView: 1,
+                slidesPerView: 1, // Show only one slide at a time
                 spaceBetween: 10,
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -101,7 +107,9 @@ function getReflections() {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-                loop: false // No infinite loop to avoid swiper growing non-stop
+                loop: false, // No infinite loop to avoid swiper growing non-stop
+                observer: true, // Update Swiper when elements change
+                observeParents: true, // Also observe parent elements
             });
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
@@ -126,3 +134,4 @@ function openPopup(id, swiper) {
 document.addEventListener('DOMContentLoaded', function() {
     getReflections();
 });
+
