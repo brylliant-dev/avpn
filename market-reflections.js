@@ -36,18 +36,22 @@ function getReflections() {
                 // Remove the id attribute since IDs must be unique
                 reflection.removeAttribute('id');
 
-                // Fill in the rep name, designation, location, reflection, and image (if available)
+                // Fill in the rep name, designation, reflection, and image (if available)
                 reflection.querySelector('.rep-name').textContent = reflectionItem['Rep Name'];
                 reflection.querySelector('.rep-designation').textContent = reflectionItem['Rep Designation'];
-                reflection.querySelector('.rep-location').textContent = reflectionItem['Rep Location']; // Assuming location field
                 reflection.querySelector('.rep-reflection').textContent = reflectionItem['Rep Reflection'];
 
-                // Assuming there's a rep image, set the src if the field exists
-                const img = reflection.querySelector('.rep-image');
+                // Assuming there are two image elements, select them both
+                const imgElements = reflection.querySelectorAll('.rep-image');
+
+                // Apply the same image URL to both img elements
                 if (reflectionItem['Rep Image']) {
-                    img.src = reflectionItem['Rep Image'];
+                    imgElements.forEach(img => {
+                        img.src = reflectionItem['Rep Image'];
+                    });
                 } else {
-                    img.remove(); // Optionally remove the image element if not available
+                    // Optionally remove the image elements if the image URL is not available
+                    imgElements.forEach(img => img.remove());
                 }
 
                 // Append the cloned reflection to the container
