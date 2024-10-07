@@ -27,8 +27,8 @@ function getReflections() {
             const templateReflection = document.getElementById('reflection');
             const templateSlide = document.getElementById('ref-slide');
 
-            // Loop through each reflection item
-            data.forEach((reflectionItem) => {
+            // Loop through each reflection item and assign unique ids to match
+            data.forEach((reflectionItem, index) => {
                 // Clone the template reflection
                 const reflection = templateReflection.cloneNode(true);
 
@@ -38,6 +38,10 @@ function getReflections() {
                 // Remove the id attribute from the cloned reflection and slide
                 reflection.removeAttribute('id');
                 slide.removeAttribute('id');
+
+                // Set a unique data-id to match reflections with slides
+                reflection.setAttribute('data-id', index);
+                slide.setAttribute('data-id', index);
 
                 // --- Populate the cloned #reflection ---
                 // Set the rep-image and rep-location in the reflection
@@ -50,7 +54,7 @@ function getReflections() {
                     reflectionImg.remove(); // Remove the image if not available
                 }
 
-                reflectionLocation.textContent = reflectionItem['Rep Location'];
+                reflectionLocation.textContent = reflectionItem['Rep Designation']; // Assuming location is the designation
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
@@ -74,6 +78,11 @@ function getReflections() {
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
+
+                // --- Add event listener to match #reflection with #ref-slide ---
+                reflection.addEventListener('click', () => {
+                    openPopup(index); // Open popup with the correct slide
+                });
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
@@ -81,7 +90,7 @@ function getReflections() {
             templateSlide.remove();
 
             // Initialize SwiperJS after appending all slides
-            new Swiper('.reflections_swiper', {
+            const swiper = new Swiper('.reflections_swiper', {
                 slidesPerView: 1,
                 spaceBetween: 10,
                 navigation: {
@@ -104,8 +113,25 @@ function getReflections() {
     request.send();
 }
 
+// Function to open the popup and show the matching slide
+function openPopup(id) {
+    // Hide all slides initially
+    const allSlides = document.querySelectorAll('.reflections_swiper-slide');
+    allSlides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+
+    // Show the selected slide based on matching data-id
+    const matchingSlide = document.querySelector(`.reflections_swiper-slide[data-id='${id}']`);
+    if (matchingSlide) {
+        matchingSlide.style.display = 'block';
+    }
+
+    // Show the popup (assuming you have a popup element)
+    document.querySelector('.reflections_popup').style.display = 'block';
+}
+
 // Run the getReflections function when the document is ready
 document.addEventListener('DOMContentLoaded', function() {
     getReflections();
 });
-
