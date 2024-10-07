@@ -57,7 +57,7 @@ function getReflections() {
                     reflectionImg.remove(); // Remove the image if not available
                 }
 
-                reflectionLocation.textContent = reflectionItem['Rep Designation']; // Assuming location is the designation
+                reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
