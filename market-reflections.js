@@ -19,16 +19,13 @@ function getReflections() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Sort reflections by ID
-            data.sort((a, b) => a.ID - b.ID);
-
             // Get the containers where the reflections and slides will be placed
             const reflectionsContainer = document.getElementById("reflections-container");
             const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
 
             // Get the template reflection element and slide element that will be cloned
             const templateReflection = document.getElementById('reflection');
-            const templateSlide = document.querySelector('.reflections_swiper-slide');
+            const templateSlide = document.getElementById('ref-slide');
 
             // Loop through each reflection item
             data.forEach((reflectionItem) => {
@@ -38,8 +35,9 @@ function getReflections() {
                 // Clone the template slide
                 const slide = templateSlide.cloneNode(true);
 
-                // Remove the id attribute from the cloned reflection
+                // Remove the id attribute from the cloned reflection and slide
                 reflection.removeAttribute('id');
+                slide.removeAttribute('id');
 
                 // Fill in the rep name, designation, location, and reflection in reflection
                 reflection.querySelector('.rep-name').textContent = reflectionItem['Rep Name'];
@@ -60,7 +58,7 @@ function getReflections() {
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
 
-                // Now populate the cloned slide
+                // Now populate the cloned slide for SwiperJS
                 const slideImage = slide.querySelector('.rep-image');
                 const slideReflection = slide.querySelector('.rep-reflection');
                 const slideName = slide.querySelector('.rep-name');
@@ -76,13 +74,28 @@ function getReflections() {
                 slideName.textContent = reflectionItem['Rep Name'];
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
-                // Append the cloned slide to the swiper-wrapper container
+                // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
             templateReflection.remove();
             templateSlide.remove();
+
+            // Initialize SwiperJS after appending all slides
+            new Swiper('.reflections_swiper', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                loop: true, // Optional: if you want an infinite loop
+            });
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
@@ -97,4 +110,3 @@ function getReflections() {
 document.addEventListener('DOMContentLoaded', function() {
     getReflections();
 });
-
