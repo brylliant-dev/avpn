@@ -1,72 +1,72 @@
 [
     {
-        "ID": 1,
-        "Member Name": "John Doe",
-        "Member Designation": "Director of Global Strategy, Global Markets Inc.",
-        "Member Quote": "Our collaboration with AVPN has been pivotal in expanding our impact. The strategic support and extensive network have allowed us to reach new heights in addressing key challenges in the market.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33f44c9d9dcde0cd3a7_image.png"
+        "ID": "1",
+        "Member Name": "Tom Stevenson",
+        "Member Designation": "Head of Fundraising, Clean Air Fund",
+        "Member Quote": "Joining AVPN has provided crucial support for Clean Air Fund as we deepen and expand our presence across Asia. AVPN’s convening power has been very helpful as we have gained access to several events, workshops, roundtables and more that bring together a range of stakeholders that we might not have reached otherwise. We have also been able to use our membership across the organisation, allowing staff from across Clean Air Fund to take advantage of the events and services offered by AVPN membership.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/67041328a141b204dd348967_Tom%20Stevenson.webp"
     },
     {
-        "ID": 2,
-        "Member Name": "Jane Smith",
-        "Member Designation": "Head of Corporate Relations, Global Markets Group",
-        "Member Quote": "AVPN's commitment to fostering innovation and providing vital resources has transformed the way we approach partnerships. It's been an incredible journey working with them.",
+        "ID": "2",
+        "Member Name": "Sam Tiwari",
+        "Member Designation": "Head of Philanthropy, UK & Europe, MSI Reproductive Choices",
+        "Member Quote": "AVPN is an exceptional platform for knowledge exchange, thought leadership, and networking with diverse stakeholders across Asia and beyond. By facilitating connections, networking, and the sharing of ideas, AVPN is fostering a global community of changemakers, innovators and investors, united in the mission to address the most pressing challenges of our time. At MSI Reproductive Choices, we immensely value the opportunities that AVPN provides to spotlight our work on bodily autonomy and reproductive choice in Asia and globally, and to explore partnerships and collaboration across multiple sectors and regions.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/670413284789119f25fe1b0a_Sam%20Tiwari.webp"
+    },
+    {
+        "ID": "3",
+        "Member Name": "Kristen Stevenson",
+        "Member Designation": "Director of Partnerships, Minderoo Foundation",
+        "Member Quote": "As a Foundation, we carefully select what memberships and networks to be involved in to maximise our resources and the potential ROI (Return on Investment). From this perspective, AVPN is a no-brainer – we are thankful for the valuable connections AVPN offers, for the accurate pulse check on our region, and for the quality of AVPN events throughout the year.",
         "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3406f15136da45a9edd_image-1.png"
     },
     {
-        "ID": 3,
-        "Member Name": "Ahmed Ismail",
-        "Member Designation": "Chief Executive Officer, Southeast Asia Markets Co.",
-        "Member Quote": "AVPN's guidance and expertise have been instrumental in the success of our sustainability initiatives. Their network and resources have significantly amplified our efforts across the region.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33eb83ab0f475137623_image-2.png"
+        "ID": "4",
+        "Member Name": "Jemmy Chayadi",
+        "Member Designation": "Director of Strategy and Sustainable Development, Djarum Foundation",
+        "Member Quote": "AVPN has given us in Djarum Foundation the valuable opportunity to network and learn directly from other key players, ranging from large private companies to incubators, accelerators, foundations and non-government organisations that are focused on driving positive social and environmental impacts in the region. Actively participating in various events hosted by AVPN has provided us with many relevant insights from other countries, and thereby enabled us to benchmark our existing initiatives against international best practices. Collaborating with other organisations also helped spark ideas for new partnerships and projects, allowing us to accelerate holistic and sustainable growth in Indonesia.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/670413264f340d219c362e30_Jemmy%20Chayadi.webp"
     },
     {
-        "ID": 4,
-        "Member Name": "Maria Lim",
-        "Member Designation": "Managing Director, Southeast Asia Markets Holdings",
-        "Member Quote": "Working with AVPN has allowed us to bring our community-driven projects to a much larger audience. Their deep understanding of the region's needs has been invaluable.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3403bdb58e7fc6b24ba_image-3.png"
+        "ID": "5",
+        "Member Name": "Sandhya Dovedy",
+        "Member Designation": "Partnerships Manager, Social Impact, LinkedIn",
+        "Member Quote": "Being part of the AVPN community has been an enriching experience. The network has provided invaluable opportunities to connect with like-minded organisations and individuals who are equally passionate about driving social impact. The AVPN team is always keen to explore collaboration, and this collaborative spirit and shared commitment to creating positive change have been truly inspiring. We look forward to continuing our partnership and contributing to the broader social impact ecosystem.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/67041328c9e6c75b6a1d856b_Sandhya%20Dovedy.webp"
     },
     {
-        "ID": 5,
-        "Member Name": "Rahul Nair",
-        "Member Designation": "Senior Vice President, South Asia Markets Ltd.",
-        "Member Quote": "Our collaboration with AVPN has been crucial in driving social impact in South Asia. Their innovative approach has helped us address pressing issues more effectively.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33f3622e22dbd3fff6f_image-4.png"
+        "ID": "6",
+        "Member Name": "Mahmudi Yusbi",
+        "Member Designation": "Head, Strategic Planning and Business Development, ASEAN Foundation",
+        "Member Quote": "AVPN has given the ASEAN Foundation a unique opportunity to access innovative cooperation, funding, strategic partners, and capacity-building resources. Through AVPN, we've connected with like-minded organisations, creating impactful initiatives that benefit communities across Southeast Asia. This membership is more than a network—it's a catalyst for sustainable development and a vital platform for scaling our efforts towards inclusive growth in the region.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/67041327003d30a071a817dc_Mahmudi%20Yusbi.webp"
     },
     {
-        "ID": 6,
-        "Member Name": "Priya Kapoor",
-        "Member Designation": "Regional Head, South Asia Markets Enterprises",
-        "Member Quote": "AVPN's robust network and expertise in social impact initiatives have elevated our projects, enabling us to make a greater difference in the communities we serve.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c340b4f89b91b0b5fd17_image-5.png"
+        "ID": "7",
+        "Member Name": "Radha Goenka",
+        "Member Designation": "Director, RPG Foundation",
+        "Member Quote": "AVPN is an incredible platform that brings passionate members together in the impact space. Personally, the network offers great opportunities to learn and grow your impact. In 2023, a meaningful exchange on gender related issues led to a collaborative effort between myself and another member from Asia to jointly fund a research report on gender inclusion across Asia-Pacific. We realised that as Asian women we had a lot in common culturally and a pan Asia report would be useful. I am grateful to the network for providing growing opportunities and introducing me to like minded individuals from around the world.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/67041326a141b204dd3487fb_Radha%20Goenka.webp"
     },
     {
-        "ID": 7,
-        "Member Name": "Hiroshi Tanaka",
-        "Member Designation": "Chief Operations Officer, Northeast Asia Markets Corporation",
-        "Member Quote": "AVPN has been an indispensable partner in helping us create meaningful change. Their deep knowledge of the Northeast Asia landscape has empowered us to tackle critical challenges.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c34079f551a16bee426c_image-6.png"
+        "ID": "8",
+        "Member Name": "Rancho Lee",
+        "Member Designation": "Co-founder & APAC Partner, Simsan Ventures",
+        "Member Quote": "It was a truly meaningful experience engaging with AVPN members and events. I personally put a lot of emphasis on diversity for everything, and I was able to meet many different innovators from many different backgrounds and countries GLOBALLY. I hope more members will be able to engage more with each other to make a global synergy.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/67041326ef184bca97acce11_Rancho%20Lee.webp"
     },
     {
-        "ID": 8,
-        "Member Name": "Kim So-yeon",
-        "Member Designation": "Vice President, Northeast Asia Markets International",
-        "Member Quote": "The collaborative efforts with AVPN have been instrumental in scaling our impact. Their support has allowed us to make a measurable difference in the lives of many.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3413bdb58e7fc6b2639_image-7.png"
+        "ID": "9",
+        "Member Name": "Francis Ngai",
+        "Member Designation": "Founder and Chief Executive Officer, Social Ventures Hong Kong",
+        "Member Quote": "Social Ventures Hong Kong is proud to partner with AVPN in 2024 to deliver the Family Impact Symposium. AVPN’s cross regional network allowed us to reach outside Hong Kong to engage with ecosystem players from all over Asia. In the process, we discovered the potential of families to contribute to social impact. This collaboration shows the power of collective action between the AVPN platform and its members, each contributing their respective strengths. I look forward to more collaboration with AVPN in the future!",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/670413269b4ea1d8d5a11320_Francis%20Ngai.webp"
     },
     {
-        "ID": 9,
-        "Member Name": "Youssef Al-Mansouri",
-        "Member Designation": "Managing Partner, Western Asia Markets Group",
-        "Member Quote": "Partnering with AVPN has transformed the way we engage with local communities. Their dedication to social impact has been inspiring and invaluable to our success.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c33fb83ab0f4751376f1_image-8.png"
-    },
-    {
-        "ID": 10,
-        "Member Name": "Leila Farahani",
-        "Member Designation": "Director of Communications, Western Asia Markets Corp.",
-        "Member Quote": "AVPN's strategic approach has been critical in driving forward our initiatives. Their commitment to creating sustainable impact aligns perfectly with our mission.",
-        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/6700c3408320a06d98f878a6_image-9.png"
+        "ID": "10",
+        "Member Name": "Sunny Huang",
+        "Member Designation": "Vice Director, Foundation for Women's Rights Promotion and Development",
+        "Member Quote": "Collaborating with AVPN on the East Asia Gender Equality Forum was a remarkable and successful experience. Our partnership has made a real impact, highlighting ongoing gender gaps in political representation across East Asia and underscoring the need for continued efforts to address these imbalances. The outcomes of the Forum with AVPN and gender experts will continue to enhance women’s rights and strengthen our commitment to advancing gender equality.",
+        "Member Image": "https://cdn.prod.website-files.com/66e28019ecd2a5d407d80fd2/670413fd8d8265feb457da54_Sunny%20Huang.webp"
     }
 ]
