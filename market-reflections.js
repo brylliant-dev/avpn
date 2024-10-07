@@ -54,7 +54,7 @@ function getReflections() {
                     reflectionImg.remove(); // Remove the image if not available
                 }
 
-                reflectionLocation.textContent = reflectionItem['Rep Designation']; // Assuming location is the designation
+                reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
@@ -81,7 +81,7 @@ function getReflections() {
 
                 // --- Add event listener to match #reflection with #ref-slide ---
                 reflection.addEventListener('click', () => {
-                    openPopup(index); // Open popup with the correct slide
+                    openPopup(index, swiper); // Open popup with the correct slide and control Swiper
                 });
             });
 
@@ -100,7 +100,8 @@ function getReflections() {
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                }
+                },
+                loop: false // No infinite loop to avoid swiper growing non-stop
             });
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
@@ -113,18 +114,9 @@ function getReflections() {
 }
 
 // Function to open the popup and show the matching slide
-function openPopup(id) {
-    // Hide all slides initially
-    const allSlides = document.querySelectorAll('.reflections_swiper-slide');
-    allSlides.forEach(slide => {
-        slide.style.display = 'none';
-    });
-
-    // Show the selected slide based on matching data-id
-    const matchingSlide = document.querySelector(`.reflections_swiper-slide[data-id='${id}']`);
-    if (matchingSlide) {
-        matchingSlide.style.display = 'flex';
-    }
+function openPopup(id, swiper) {
+    // Set the swiper to the correct slide index
+    swiper.slideTo(id, 0);
 
     // Show the popup (assuming you have a popup element)
     document.querySelector('.reflections_popup').style.display = 'block';
