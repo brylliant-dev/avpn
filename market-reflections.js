@@ -39,37 +39,35 @@ function getReflections() {
                 reflection.removeAttribute('id');
                 slide.removeAttribute('id');
 
-                // Fill in the rep name, designation, location, and reflection in reflection
-                reflection.querySelector('.rep-name').textContent = reflectionItem['Rep Name'];
-                reflection.querySelector('.rep-designation').textContent = reflectionItem['Rep Designation'];
-                reflection.querySelector('.rep-location').textContent = reflectionItem['Rep Designation']; // Assuming Rep Designation is also the location
-                reflection.querySelector('.rep-reflection').textContent = reflectionItem['Rep Reflection'];
+                // --- Populate the cloned #reflection ---
+                // Set the rep-image and rep-location in the reflection
+                const reflectionImg = reflection.querySelector('.rep-image');
+                const reflectionLocation = reflection.querySelector('.rep-location');
 
-                // Apply the same image URL to the image elements
-                const imgElements = reflection.querySelectorAll('.rep-image');
                 if (reflectionItem['Rep Image']) {
-                    imgElements.forEach(img => {
-                        img.src = reflectionItem['Rep Image'];
-                    });
+                    reflectionImg.src = reflectionItem['Rep Image'];
                 } else {
-                    imgElements.forEach(img => img.remove()); // Remove if image not available
+                    reflectionImg.remove(); // Remove the image if not available
                 }
+
+                reflectionLocation.textContent = reflectionItem['Rep Designation']; // Assuming location is the designation
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
 
-                // Now populate the cloned slide for SwiperJS
-                const slideImage = slide.querySelector('.rep-image');
+                // --- Populate the cloned #ref-slide ---
+                // Set the rep-image, rep-reflection, rep-name, and rep-designation in the slide
+                const slideImg = slide.querySelector('.rep-image');
                 const slideReflection = slide.querySelector('.rep-reflection');
                 const slideName = slide.querySelector('.rep-name');
                 const slideDesignation = slide.querySelector('.rep-designation');
 
-                // Update the content of the cloned slide
                 if (reflectionItem['Rep Image']) {
-                    slideImage.src = reflectionItem['Rep Image'];
+                    slideImg.src = reflectionItem['Rep Image'];
                 } else {
-                    slideImage.remove(); // Remove the image if not available
+                    slideImg.remove(); // Remove the image if not available
                 }
+
                 slideReflection.textContent = reflectionItem['Rep Reflection'];
                 slideName.textContent = reflectionItem['Rep Name'];
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
@@ -110,3 +108,4 @@ function getReflections() {
 document.addEventListener('DOMContentLoaded', function() {
     getReflections();
 });
+
