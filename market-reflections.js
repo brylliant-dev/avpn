@@ -100,8 +100,7 @@ function getReflections() {
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                },
-                loop: true, // Optional: if you want an infinite loop
+                }
             });
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
@@ -124,7 +123,7 @@ function openPopup(id) {
     // Show the selected slide based on matching data-id
     const matchingSlide = document.querySelector(`.reflections_swiper-slide[data-id='${id}']`);
     if (matchingSlide) {
-        matchingSlide.style.display = 'block';
+        matchingSlide.style.display = 'flex';
     }
 
     // Show the popup (assuming you have a popup element)
