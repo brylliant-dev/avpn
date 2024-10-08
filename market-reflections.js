@@ -97,6 +97,10 @@ function getReflections() {
 
             // Initialize SwiperJS after appending all slides
             const swiper = new Swiper('.reflections_swiper', {
+                effect: 'fade',
+                  fadeEffect: {
+                    crossFade: true
+                  },
                 slidesPerView: 1, // Show only one slide at a time
                 navigation: {
                     nextEl: '.swiper-button-next',
