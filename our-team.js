@@ -19,7 +19,10 @@ function getTeamData() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Group the team members by 'Team Tab Title'
+            // Sort the data by SortOrder
+            data.sort((a, b) => a.SortOrder - b.SortOrder);
+
+            // Group the team members by 'Team'
             let groupedTeams = data.reduce((acc, teamItem) => {
                 let tabTitle = teamItem['Team'];
                 if (!acc[tabTitle]) {
@@ -30,14 +33,34 @@ function getTeamData() {
             }, {});
 
             // Loop through each group and create tabs and contents
-            Object.keys(groupedTeams).forEach(function(tabTitle) {
+            Object.keys(groupedTeams).forEach(function(tabTitle, tabIndex) {
                 // Create the tab button for this team group
-                let $tabButton = $('<div class="w-tab-link tab-title">' + tabTitle + '</div>');
-                $('.w-tab-menu').append($tabButton);
+                let $tabButton = $('<a>', {
+                    class: 'review_team_tabs_item w-inline-block w-tab-link ' + (tabIndex === 0 ? 'w--current' : ''),
+                    'data-w-tab': 'Tab ' + (tabIndex + 1),
+                    href: '#w-tabs-2-data-w-pane-' + tabIndex,
+                    role: 'tab',
+                    'aria-controls': 'w-tabs-2-data-w-pane-' + tabIndex,
+                    'aria-selected': tabIndex === 0
+                }).append($('<h4>', {
+                    class: 'heading-22 tab-title',
+                    text: tabTitle
+                }));
+
+                $('.review_team_tabs_menu').append($tabButton);
 
                 // Create the tab content container with an unordered list
-                let $tabContent = $('<div class="w-tab-pane"><ul class="team-list"></ul></div>');
-                $('.w-tab-content').append($tabContent);
+                let $tabContent = $('<div>', {
+                    class: 'review_team_tabs_content-item w-tab-pane ' + (tabIndex === 0 ? 'w--tab-active' : ''),
+                    'data-w-tab': 'Tab ' + (tabIndex + 1),
+                    id: 'w-tabs-2-data-w-pane-' + tabIndex,
+                    role: 'tabpanel',
+                    'aria-labelledby': 'w-tabs-2-data-w-tab-' + tabIndex
+                }).append($('<ul>', {
+                    class: 'w-list-unstyled team-list'
+                }));
+
+                $('.review_team_tabs_content').append($tabContent);
 
                 // Get the list of team members for this group
                 let teamMembers = groupedTeams[tabTitle];
@@ -45,19 +68,34 @@ function getTeamData() {
                 // Loop through the team members and add them to the list
                 teamMembers.forEach(function(teamItem) {
                     // Create list item for each team member
-                    let $listItem = $('<li></li>');
-                    let $itemWrapper = $('<div class="team_list-item_wrapper"></div>');
-
-                    // Populate the wrapper with team details
-                    let $teamName = $('<div class="team-name">' + teamItem['Name'] + '</div>');
-                    let $teamDesignation = $('<div class="team-designation">' + teamItem['Designation'] + '</div>');
-                    let $teamImg = $('<img class="team-img" src="' + teamItem['Image'] + '"/>');
-
-                    // Append the team details into the wrapper
-                    $itemWrapper.append($teamName, $teamDesignation, $teamImg);
-
-                    // Append the wrapper into the list item
-                    $listItem.append($itemWrapper);
+                    let $listItem = $('<li>').append(
+                        $('<div>', {
+                            class: 'team_list-item_wrapper'
+                        }).append(
+                            $('<div>', {
+                                class: 'team_list-item_text'
+                            }).append(
+                                $('<p>', {
+                                    class: 'heading-20 is-bold team-name',
+                                    text: teamItem['Team']
+                                }),
+                                $('<div>', {
+                                    class: 'text-size-16 team-designation',
+                                    text: teamItem['Designation']
+                                })
+                            ),
+                            $('<div>', {
+                                class: 'team_list-item_image-wrapper'
+                            }).append(
+                                $('<img>', {
+                                    class: 'img-full-width team-img',
+                                    src: teamItem['Image'],
+                                    alt: teamItem['Team'],
+                                    sizes: "(max-width: 991px) 112px, 13vw"
+                                })
+                            )
+                        )
+                    );
 
                     // Append the list item into the unordered list inside the tab content
                     $tabContent.find('ul.team-list').append($listItem);
