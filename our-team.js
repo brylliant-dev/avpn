@@ -77,7 +77,7 @@ function getTeamData() {
                             }).append(
                                 $('<p>', {
                                     class: 'heading-20 is-bold team-name',
-                                    text: teamItem['Team']
+                                    text: teamItem['Name']
                                 }),
                                 $('<div>', {
                                     class: 'text-size-16 team-designation',
@@ -90,7 +90,7 @@ function getTeamData() {
                                 $('<img>', {
                                     class: 'img-full-width team-img',
                                     src: teamItem['Image'],
-                                    alt: teamItem['Team'],
+                                    alt: teamItem['Name'],
                                     sizes: "(max-width: 991px) 112px, 13vw"
                                 })
                             )
