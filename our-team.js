@@ -19,35 +19,49 @@ function getTeamData() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Loop through each team member item
-            data.forEach(function(teamItem, index) {
-                // Select or create the tab and content elements using the index
+            // Group the team members by 'Team Tab Title'
+            let groupedTeams = data.reduce((acc, teamItem) => {
+                let tabTitle = teamItem['Team'];
+                if (!acc[tabTitle]) {
+                    acc[tabTitle] = [];
+                }
+                acc[tabTitle].push(teamItem);
+                return acc;
+            }, {});
 
-                // Create a new tab button if needed
-                let $tabButton = $('<div class="w-tab-link tab-title">' + teamItem['Team Tab Title'] + '</div>');
+            // Loop through each group and create tabs and contents
+            Object.keys(groupedTeams).forEach(function(tabTitle) {
+                // Create the tab button for this team group
+                let $tabButton = $('<div class="w-tab-link tab-title">' + tabTitle + '</div>');
                 $('.w-tab-menu').append($tabButton);
 
-                // Create a new tab content container if needed
+                // Create the tab content container with an unordered list
                 let $tabContent = $('<div class="w-tab-pane"><ul class="team-list"></ul></div>');
                 $('.w-tab-content').append($tabContent);
 
-                // Create list item for this team member
-                let $listItem = $('<li></li>');
-                let $itemWrapper = $('<div class="team_list-item_wrapper"></div>');
+                // Get the list of team members for this group
+                let teamMembers = groupedTeams[tabTitle];
 
-                // Populate the wrapper with team details
-                let $teamName = $('<div class="team-name">' + teamItem['Team Name'] + '</div>');
-                let $teamDesignation = $('<div class="team-designation">' + teamItem['Team Designation'] + '</div>');
-                let $teamImg = $('<img class="team-img" src="' + teamItem['Team Image'] + '"/>');
+                // Loop through the team members and add them to the list
+                teamMembers.forEach(function(teamItem) {
+                    // Create list item for each team member
+                    let $listItem = $('<li></li>');
+                    let $itemWrapper = $('<div class="team_list-item_wrapper"></div>');
 
-                // Append the team details into the wrapper
-                $itemWrapper.append($teamName, $teamDesignation, $teamImg);
-                
-                // Append the wrapper into the list item
-                $listItem.append($itemWrapper);
-                
-                // Append the list item into the unordered list inside the tab content
-                $tabContent.find('ul.team-list').append($listItem);
+                    // Populate the wrapper with team details
+                    let $teamName = $('<div class="team-name">' + teamItem['Name'] + '</div>');
+                    let $teamDesignation = $('<div class="team-designation">' + teamItem['Designation'] + '</div>');
+                    let $teamImg = $('<img class="team-img" src="' + teamItem['Image'] + '"/>');
+
+                    // Append the team details into the wrapper
+                    $itemWrapper.append($teamName, $teamDesignation, $teamImg);
+
+                    // Append the wrapper into the list item
+                    $listItem.append($itemWrapper);
+
+                    // Append the list item into the unordered list inside the tab content
+                    $tabContent.find('ul.team-list').append($listItem);
+                });
             });
 
             // Reinitialize Webflow tabs after populating content
