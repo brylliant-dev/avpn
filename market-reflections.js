@@ -1,5 +1,5 @@
 // Create a variable for the new JSON file URL
-let teamUrl = new URL('https://brylliant-dev.github.io/avpn/our-team.json');
+let reflectionURL = new URL('https://brylliant-dev.github.io/avpn/our-team.json');
 
 // Define a function to get team data and populate tabs
 function getTeamData() {
@@ -7,7 +7,7 @@ function getTeamData() {
     let request = new XMLHttpRequest();
 
     // Convert the URL object to a string
-    let url = teamUrl.toString();
+    let url = reflectionURL.toString();
 
     // Open a GET request to the URL
     request.open('GET', url, true);
