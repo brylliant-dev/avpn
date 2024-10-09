@@ -1,5 +1,5 @@
 // Create a variable for the new JSON file URL
-let teamUrl = new URL('https://brylliant-dev.github.io/avpn/our-team.json');
+let reflectionURL = new URL('https://brylliant-dev.github.io/avpn/our-team.json');
 
 // Define a function to get team data and populate tabs
 function getTeamData() {
@@ -7,7 +7,7 @@ function getTeamData() {
     let request = new XMLHttpRequest();
 
     // Convert the URL object to a string
-    let url = teamUrl.toString();
+    let url = reflectionURL.toString();
 
     // Open a GET request to the URL
     request.open('GET', url, true);
@@ -21,6 +21,10 @@ function getTeamData() {
         if (request.status >= 200 && request.status < 400) {
             // Sort the data by SortOrder
             data.sort((a, b) => a.SortOrder - b.SortOrder);
+
+            // Remove the original static tab and content to avoid conflicts
+            $('.review_team_tabs_menu').empty();
+            $('.review_team_tabs_content').empty();
 
             // Group the team members by 'Team'
             let groupedTeams = data.reduce((acc, teamItem) => {
