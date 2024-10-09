@@ -1,13 +1,13 @@
-// Create a variable for the new JSON file URL
-let reflectionURL = new URL('https://brylliant-dev.github.io/avpn/our-team.json');
+// Create a variable for the JSON file URL
+let reflectionsUrl = new URL('https://brylliant-dev.github.io/avpn/market-reflections.json');
 
-// Define a function to get team data and populate tabs
-function getTeamData() {
+// Define a function to get reflections data
+function getReflections() {
     // Create a request variable and assign a new XMLHttpRequest object to it
     let request = new XMLHttpRequest();
 
     // Convert the URL object to a string
-    let url = reflectionURL.toString();
+    let url = reflectionsUrl.toString();
 
     // Open a GET request to the URL
     request.open('GET', url, true);
@@ -19,103 +19,121 @@ function getTeamData() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Sort the data by SortOrder
-            data.sort((a, b) => a.SortOrder - b.SortOrder);
+            // Get the containers where the reflections and slides will be placed
+            const reflectionsContainer = document.getElementById("reflections-container");
+            const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
 
-            // Remove the original static tab and content to avoid conflicts
-            $('.review_team_tabs_menu').empty();
-            $('.review_team_tabs_content').empty();
+            // Get the template reflection element and slide element that will be cloned
+            const templateReflection = document.getElementById('reflection');
+            const templateSlide = document.getElementById('ref-slide');
 
-            // Group the team members by 'Team'
-            let groupedTeams = data.reduce((acc, teamItem) => {
-                let tabTitle = teamItem['Team'];
-                if (!acc[tabTitle]) {
-                    acc[tabTitle] = [];
+            // Array to store IDs for SwiperJS navigation
+            let swiperSlides = [];
+
+            // Loop through each reflection item and assign unique ids to match
+            data.forEach((reflectionItem, index) => {
+                // Clone the template reflection
+                const reflection = templateReflection.cloneNode(true);
+
+                // Clone the template slide
+                const slide = templateSlide.cloneNode(true);
+
+                // Remove the id attribute from the cloned reflection and slide
+                reflection.removeAttribute('id');
+                slide.removeAttribute('id');
+
+                // Set a unique data-id to match reflections with slides
+                reflection.setAttribute('data-id', index);
+                slide.setAttribute('data-id', index);
+
+                // --- Populate the cloned #reflection ---
+                // Set the rep-image and rep-location in the reflection
+                const reflectionImg = reflection.querySelector('.rep-image');
+                const reflectionLocation = reflection.querySelector('.rep-location');
+
+                if (reflectionItem['Rep Image']) {
+                    reflectionImg.src = reflectionItem['Rep Image'];
+                } else {
+                    reflectionImg.remove(); // Remove the image if not available
                 }
-                acc[tabTitle].push(teamItem);
-                return acc;
-            }, {});
 
-            // Loop through each group and create tabs and contents
-            Object.keys(groupedTeams).forEach(function(tabTitle, tabIndex) {
-                // Create the tab button for this team group
-                let $tabButton = $('<a>', {
-                    class: 'review_team_tabs_item w-inline-block w-tab-link ' + (tabIndex === 0 ? 'w--current' : ''),
-                    'data-w-tab': 'Tab ' + (tabIndex + 1),
-                    href: '#w-tabs-2-data-w-pane-' + tabIndex,
-                    role: 'tab',
-                    'aria-controls': 'w-tabs-2-data-w-pane-' + tabIndex,
-                    'aria-selected': tabIndex === 0
-                }).append($('<h4>', {
-                    class: 'heading-22 tab-title',
-                    text: tabTitle
-                }));
+                reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
-                $('.review_team_tabs_menu').append($tabButton);
+                // Append the cloned reflection to the reflections container
+                reflectionsContainer.appendChild(reflection);
 
-                // Create the tab content container with an unordered list
-                let $tabContent = $('<div>', {
-                    class: 'review_team_tabs_content-item w-tab-pane ' + (tabIndex === 0 ? 'w--tab-active' : ''),
-                    'data-w-tab': 'Tab ' + (tabIndex + 1),
-                    id: 'w-tabs-2-data-w-pane-' + tabIndex,
-                    role: 'tabpanel',
-                    'aria-labelledby': 'w-tabs-2-data-w-tab-' + tabIndex
-                }).append($('<ul>', {
-                    class: 'w-list-unstyled team-list'
-                }));
+                // --- Populate the cloned #ref-slide ---
+                // Set the rep-image, rep-reflection, rep-name, and rep-designation in the slide
+                const slideImg = slide.querySelector('.rep-image');
+                const slideReflection = slide.querySelector('.rep-reflection');
+                const slideName = slide.querySelector('.rep-name');
+                const slideDesignation = slide.querySelector('.rep-designation');
 
-                $('.review_team_tabs_content').append($tabContent);
+                if (reflectionItem['Rep Image']) {
+                    slideImg.src = reflectionItem['Rep Image'];
+                } else {
+                    slideImg.remove(); // Remove the image if not available
+                }
 
-                // Get the list of team members for this group
-                let teamMembers = groupedTeams[tabTitle];
+                slideReflection.textContent = reflectionItem['Rep Reflection'];
+                slideName.textContent = reflectionItem['Rep Name'];
+                slideDesignation.textContent = reflectionItem['Rep Designation'];
 
-                // Loop through the team members and add them to the list
-                teamMembers.forEach(function(teamItem) {
-                    // Create list item for each team member
-                    let $listItem = $('<li>').append(
-                        $('<div>', {
-                            class: 'team_list-item_wrapper'
-                        }).append(
-                            $('<div>', {
-                                class: 'team_list-item_text'
-                            }).append(
-                                $('<p>', {
-                                    class: 'heading-20 is-bold team-name',
-                                    text: teamItem['Name']
-                                }),
-                                $('<div>', {
-                                    class: 'text-size-16 team-designation',
-                                    text: teamItem['Designation']
-                                })
-                            ),
-                            $('<div>', {
-                                class: 'team_list-item_image-wrapper'
-                            }).append(
-                                $('<img>', {
-                                    class: 'img-full-width team-img',
-                                    src: teamItem['Image'],
-                                    alt: teamItem['Name'],
-                                    sizes: "(max-width: 991px) 112px, 13vw"
-                                })
-                            )
-                        )
-                    );
+                // Append the cloned slide to the swiper-wrapper container for SwiperJS
+                slidesContainer.appendChild(slide);
 
-                    // Append the list item into the unordered list inside the tab content
-                    $tabContent.find('ul.team-list').append($listItem);
+                // Store slide ID for navigation
+                swiperSlides.push(slide);
+
+                // --- Add event listener to match #reflection with #ref-slide ---
+                reflection.addEventListener('click', () => {
+                    openPopup(index, swiper); // Open popup with the correct slide and control Swiper
                 });
             });
 
-            // Reinitialize Webflow tabs after populating content
-            Webflow.require('tabs').ready();
+            // Optionally, remove the original template reflection and slide from the DOM if not needed
+            templateReflection.remove();
+            templateSlide.remove();
+
+            // Initialize SwiperJS after appending all slides
+            const swiper = new Swiper('.reflections_swiper', {
+                effect: 'fade',
+                  fadeEffect: {
+                    crossFade: true
+                  },
+                slidesPerView: 1, // Show only one slide at a time
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                loop: false, // No infinite loop to avoid swiper growing non-stop
+                observer: true, // Update Swiper when elements change
+                observeParents: true, // Also observe parent elements
+            });
+
+            // Reinitialize Webflow interactions to ensure animations apply to the new elements
+            Webflow.require('ix2').init();
         }
     };
 
-    // Send the request to load the team data
+    // Send the request to load the reflections data
     request.send();
 }
 
-// Run the getTeamData function when the document is ready
+// Function to open the popup and show the matching slide
+function openPopup(id, swiper) {
+    // Set the swiper to the correct slide index
+    swiper.slideTo(id, 0);
+
+    // Show the popup (assuming you have a popup element)
+    document.querySelector('.reflections_popup').style.display = 'block';
+}
+
+// Run the getReflections function when the document is ready
 document.addEventListener('DOMContentLoaded', function() {
-    getTeamData();
+    getReflections();
 });
