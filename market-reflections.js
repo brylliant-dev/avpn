@@ -19,6 +19,13 @@ function getReflections() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
+            // Sort the data alphabetically by 'Rep Location'
+            data.sort((a, b) => {
+                let locationA = a['Rep Location'].toUpperCase(); // Ignore case
+                let locationB = b['Rep Location'].toUpperCase(); // Ignore case
+                return locationA < locationB ? -1 : locationA > locationB ? 1 : 0;
+            });
+
             // Get the containers where the reflections and slides will be placed
             const reflectionsContainer = document.getElementById("reflections-container");
             const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
@@ -59,6 +66,9 @@ function getReflections() {
 
                 reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
+                // Add fade-in class for smooth transition
+                reflection.classList.add('fade-in');
+
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
 
@@ -79,6 +89,9 @@ function getReflections() {
                 slideName.textContent = reflectionItem['Rep Name'];
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
+                // Add fade-in class for smooth transition
+                slide.classList.add('fade-in');
+
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
 
@@ -89,6 +102,12 @@ function getReflections() {
                 reflection.addEventListener('click', () => {
                     openPopup(index, swiper); // Open popup with the correct slide and control Swiper
                 });
+
+                // Apply a delay for each item to fade in one by one
+                setTimeout(() => {
+                    reflection.classList.add('show');
+                    slide.classList.add('show');
+                }, index * 200); // Adjust the 200ms to control the delay between items
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
