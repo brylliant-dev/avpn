@@ -107,7 +107,7 @@ function getReflections() {
                 setTimeout(() => {
                     reflection.classList.add('show');
                     slide.classList.add('show');
-                }, index * 200); // Adjust the 200ms to control the delay between items
+                }, index * 300); // Adjust the 300ms to control the delay between items
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
@@ -117,9 +117,9 @@ function getReflections() {
             // Initialize SwiperJS after appending all slides
             const swiper = new Swiper('.reflections_swiper', {
                 effect: 'fade',
-                  fadeEffect: {
+                fadeEffect: {
                     crossFade: true
-                  },
+                },
                 slidesPerView: 1, // Show only one slide at a time
                 navigation: {
                     nextEl: '.swiper-button-next',
