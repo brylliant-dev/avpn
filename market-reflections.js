@@ -66,7 +66,7 @@ function getReflections() {
 
                 reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
-                // Add fade-in class for smooth transition
+                // Add fade-in class for smooth transition, but do not show yet
                 reflection.classList.add('fade-in');
 
                 // Append the cloned reflection to the reflections container
@@ -89,7 +89,7 @@ function getReflections() {
                 slideName.textContent = reflectionItem['Rep Name'];
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
-                // Add fade-in class for smooth transition
+                // Add fade-in class for smooth transition, but do not show yet
                 slide.classList.add('fade-in');
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
@@ -102,12 +102,6 @@ function getReflections() {
                 reflection.addEventListener('click', () => {
                     openPopup(index, swiper); // Open popup with the correct slide and control Swiper
                 });
-
-                // Apply a delay for each item to fade in one by one
-                setTimeout(() => {
-                    reflection.classList.add('show');
-                    slide.classList.add('show');
-                }, index * 300); // Adjust the 300ms to control the delay between items
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
@@ -136,6 +130,31 @@ function getReflections() {
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
+
+            // Initialize Intersection Observer to trigger fade-in
+            const observerOptions = {
+                root: null, // null makes it relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        // Add the 'show' class to trigger the fade-in effect
+                        target.classList.add('show');
+                        // Unobserve the element once it's visible to prevent repeat animations
+                        observer.unobserve(target);
+                    }
+                });
+            }, observerOptions);
+
+            // Apply observer to all reflection items
+            const allReflections = document.querySelectorAll('.fade-in');
+            allReflections.forEach(reflection => {
+                observer.observe(reflection);
+            });
         }
     };
 
