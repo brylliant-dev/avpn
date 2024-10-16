@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ]
         };
-        const fontSize = window.innerWidth < 400 ? 10 : 16;
+        const fontSize = window.innerWidth < 480 ? 10 : 16;
         myChart = new Chart(chartContainer, {
             type: 'polarArea',
             data: data,
