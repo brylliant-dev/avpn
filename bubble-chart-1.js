@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Water, Sanitation & Hygiene', percentage: 29 },
         ]
 
-        const maxRadius = window.innerWidth < 400 ? 20 : 40;
-        const minRadius = window.innerWidth < 400 ? 5 : 10;
+        const maxRadius = window.innerWidth < 480 ? 20 : 40;
+        const minRadius = window.innerWidth < 480 ? 5 : 10;
         const scaleRadius = (percentage) => {
             const scale = (maxRadius - minRadius) / 100;
             return minRadius + (percentage * scale);
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ]
         };
-        const isMobile = window.innerWidth < 400;
+        const isMobile = window.innerWidth < 480;
         const xFontSize = isMobile ? 8 : 14; // Smaller font size for mobile
         const maxRotation = isMobile ? 90 : 45; // Increase rotation for better readability on mobile
         const paddingBottom = isMobile ? 140 : 40; // Increase bottom padding for mobile
