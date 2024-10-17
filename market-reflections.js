@@ -88,7 +88,7 @@ function getReflections() {
                     reflectionImg.remove(); // Remove the image if not available
                 }
 
-                reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
+                reflectionLocation.textContent = reflectionItem['Rep Location'];
 
                 // Add fade-in class for smooth transition, but do not show yet
                 reflection.classList.add('fade-in');
@@ -155,7 +155,7 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Initialize Intersection Observer to trigger fade-in with a 500ms offset
+            // Initialize Intersection Observer to trigger fade-in and position animations
             const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
@@ -166,11 +166,30 @@ function getReflections() {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         const target = entry.target;
-                        // Add the 'show' class to trigger the fade-in effect after a delay
+
+                        // Center the image in the #reflections-container initially
+                        const image = target.querySelector('.rep-image');
+                        image.style.position = 'absolute';
+                        image.style.top = '50%';
+                        image.style.left = '50%';
+                        image.style.transform = 'translate(-50%, -50%)';
+                        image.style.opacity = '0';
+
+                        // Delay for staggered animations
                         setTimeout(() => {
-                            target.classList.add('show');
-                        }, 500 + (index * 200)); // Add delay: 500ms offset + 200ms per item
-                        // Unobserve the element once it's visible to prevent repeat animations
+                            // Move the image back to its original position
+                            image.style.transform = 'translate(0, 0)';
+                            image.style.opacity = '1';
+
+                            // Fade in the location text after the image animates
+                            setTimeout(() => {
+                                const location = target.querySelector('.rep-location');
+                                location.style.opacity = '1';
+                            }, 300); // 300ms delay for the location text
+
+                        }, 500 + (index * 300)); // 500ms initial delay + 300ms per item
+
+                        // Unobserve after triggering to prevent re-triggering the animation
                         observer.unobserve(target);
                     }
                 });
