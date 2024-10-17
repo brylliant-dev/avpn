@@ -91,7 +91,7 @@ function getReflections() {
                 reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
                 // Add fade-in class for smooth transition, but do not show yet
-                reflection.classList.add('fade-in');
+                //reflection.classList.add('fade-in');
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
@@ -114,7 +114,7 @@ function getReflections() {
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
                 // Add fade-in class for smooth transition, but do not show yet
-                slide.classList.add('fade-in');
+                //slide.classList.add('fade-in');
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
@@ -156,7 +156,7 @@ function getReflections() {
             Webflow.require('ix2').init();
 
             // Initialize Intersection Observer to trigger fade-in
-            const observerOptions = {
+            /*const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
@@ -178,7 +178,7 @@ function getReflections() {
             const allReflections = document.querySelectorAll('.fade-in');
             allReflections.forEach(reflection => {
                 observer.observe(reflection);
-            });
+            });*/
         }
     };
 
