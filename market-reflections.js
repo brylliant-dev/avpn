@@ -91,7 +91,7 @@ function getReflections() {
                 reflectionLocation.textContent = reflectionItem['Rep Location']; // Assuming location is the designation
 
                 // Add fade-in class for smooth transition, but do not show yet
-                //reflection.classList.add('fade-in');
+                reflection.classList.add('fade-in');
 
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
@@ -114,7 +114,7 @@ function getReflections() {
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
                 // Add fade-in class for smooth transition, but do not show yet
-                //slide.classList.add('fade-in');
+                slide.classList.add('fade-in');
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
@@ -155,19 +155,21 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Initialize Intersection Observer to trigger fade-in
-            /*const observerOptions = {
+            // Initialize Intersection Observer to trigger fade-in with a 500ms offset
+            const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+                entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         const target = entry.target;
-                        // Add the 'show' class to trigger the fade-in effect
-                        target.classList.add('show');
+                        // Add the 'show' class to trigger the fade-in effect after a delay
+                        setTimeout(() => {
+                            target.classList.add('show');
+                        }, 500 + (index * 200)); // Add delay: 500ms offset + 200ms per item
                         // Unobserve the element once it's visible to prevent repeat animations
                         observer.unobserve(target);
                     }
@@ -176,9 +178,9 @@ function getReflections() {
 
             // Apply observer to all reflection items
             const allReflections = document.querySelectorAll('.fade-in');
-            allReflections.forEach(reflection => {
+            allReflections.forEach((reflection, index) => {
                 observer.observe(reflection);
-            });*/
+            });
         }
     };
 
