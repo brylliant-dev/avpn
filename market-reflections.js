@@ -1,4 +1,67 @@
-// Loop through each reflection item and assign unique ids to match
+// Create a variable for the JSON file URL
+let reflectionsUrl = new URL('https://brylliant-dev.github.io/avpn/market-reflections.json');
+
+// Define a function to get reflections data
+function getReflections() {
+    // Create a request variable and assign a new XMLHttpRequest object to it
+    let request = new XMLHttpRequest();
+
+    // Convert the URL object to a string
+    let url = reflectionsUrl.toString();
+
+    // Open a GET request to the URL
+    request.open('GET', url, true);
+
+    // Define what happens when the request loads
+    request.onload = function() {
+        // Parse the JSON response into a JavaScript object
+        let data = JSON.parse(this.response);
+
+        // Check if the request was successful
+        if (request.status >= 200 && request.status < 400) {
+            // Custom sorting order for 'Rep Location'
+            const locationOrder = [
+                'Global Markets, Australia, and New Zealand',
+                'Southeast Asia',
+                'South Asia',
+                'Northeast Asia',
+                'West Asia',
+                'Bangladesh',
+                'China',
+                'Europe, United Kingdom',
+                'Hong Kong SAR China',
+                'India',
+                'Indonesia',
+                'Japan',
+                'Malaysia',
+                'Mekong Region',
+                'Philippines',
+                'Singapore',
+                'South Korea',
+                'Taiwan',
+                'Vietnam'
+            ];
+
+            // Sort the data based on the custom location order
+            data.sort((a, b) => {
+                let locationA = a['Rep Location'];
+                let locationB = b['Rep Location'];
+
+                return locationOrder.indexOf(locationA) - locationOrder.indexOf(locationB);
+            });
+
+            // Get the containers where the reflections and slides will be placed
+            const reflectionsContainer = document.getElementById("reflections-container");
+            const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
+
+            // Get the template reflection element and slide element that will be cloned
+            const templateReflection = document.getElementById('reflection');
+            const templateSlide = document.getElementById('ref-slide');
+
+            // Array to store IDs for SwiperJS navigation
+            let swiperSlides = [];
+
+            // Loop through each reflection item and assign unique ids to match
 data.forEach((reflectionItem, index) => {
     // Clone the template reflection
     const reflection = templateReflection.cloneNode(true);
