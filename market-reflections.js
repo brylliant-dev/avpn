@@ -78,6 +78,7 @@ function getReflections() {
                 slide.setAttribute('data-id', index);
 
                 // --- Populate the cloned #reflection ---
+                // Set the rep-image and rep-location in the reflection
                 const reflectionImg = reflection.querySelector('.rep-image');
                 const reflectionLocation = reflection.querySelector('.rep-location');
 
@@ -156,12 +157,7 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Reset Webflow interactions when the slide changes
-            swiper.on('slideChange', function () {
-                Webflow.require('ix2').init(); // Reset interactions when the slide changes
-            });
-
-            // Initialize Intersection Observer to trigger fade-in for the first reflection item
+            // Initialize Intersection Observer to trigger fade-in and position animations for the first item
             const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
@@ -175,6 +171,14 @@ function getReflections() {
 
                         // Fade in the first reflection
                         target.classList.add('fade-in-visible');
+
+                        // After the first reflection fades in, fade in the rest one by one
+                        const allReflections = document.querySelectorAll('.fade-in');
+                        allReflections.forEach((reflection, index) => {
+                            
+                                reflection.classList.add('fade-in-visible');
+                            
+                        });
 
                         // Unobserve the first reflection after the fade-in starts
                         observer.unobserve(target);
