@@ -90,7 +90,10 @@ function getReflections() {
 
                 reflectionLocation.textContent = reflectionItem['Rep Location'];
 
-                // Add fade-in class for smooth transition, but do not show yet
+                // Ensure the reflection is visible
+                reflection.style.display = 'block';
+
+                // Add fade-in class for smooth transition
                 reflection.classList.add('fade-in');
 
                 // Append the cloned reflection to the reflections container
@@ -113,7 +116,10 @@ function getReflections() {
                 slideName.textContent = reflectionItem['Rep Name'];
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
-                // Add fade-in class for smooth transition, but do not show yet
+                // Ensure the slide is visible
+                slide.style.display = 'block';
+
+                // Add fade-in class for smooth transition
                 slide.classList.add('fade-in');
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
@@ -167,27 +173,8 @@ function getReflections() {
                     if (entry.isIntersecting) {
                         const target = entry.target;
 
-                        // Center the image in the #reflections-container initially
-                        const image = target.querySelector('.rep-image');
-                        image.style.position = 'absolute';
-                        image.style.top = '50%';
-                        image.style.left = '50%';
-                        image.style.transform = 'translate(-50%, -50%)';
-                        image.style.opacity = '0';
-
-                        // Delay for staggered animations
-                        setTimeout(() => {
-                            // Move the image back to its original position
-                            image.style.transform = 'translate(0, 0)';
-                            image.style.opacity = '1';
-
-                            // Fade in the location text after the image animates
-                            setTimeout(() => {
-                                const location = target.querySelector('.rep-location');
-                                location.style.opacity = '1';
-                            }, 300); // 300ms delay for the location text
-
-                        }, 500 + (index * 300)); // 500ms initial delay + 300ms per item
+                        // Fade in the reflection smoothly using CSS classes
+                        target.classList.add('fade-in-visible');
 
                         // Unobserve after triggering to prevent re-triggering the animation
                         observer.unobserve(target);
