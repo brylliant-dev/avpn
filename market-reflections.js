@@ -78,6 +78,7 @@ function getReflections() {
                 slide.setAttribute('data-id', index);
 
                 // --- Populate the cloned #reflection ---
+                // Set the rep-image and rep-location in the reflection
                 const reflectionImg = reflection.querySelector('.rep-image');
                 const reflectionLocation = reflection.querySelector('.rep-location');
 
@@ -92,10 +93,14 @@ function getReflections() {
                 // Ensure the reflection is visible
                 reflection.style.display = 'flex';
 
+                // Add fade-in class for smooth transition
+                reflection.classList.add('fade-in');
+
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
 
                 // --- Populate the cloned #ref-slide ---
+                // Set the rep-image, rep-reflection, rep-name, and rep-designation in the slide
                 const slideImg = slide.querySelector('.rep-image');
                 const slideReflection = slide.querySelector('.rep-reflection');
                 const slideName = slide.querySelector('.rep-name');
@@ -114,14 +119,19 @@ function getReflections() {
                 // Ensure the slide is visible
                 slide.style.display = 'flex';
 
+                // Add fade-in class for smooth transition
+                slide.classList.add('fade-in');
+
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
 
                 // Store slide ID for navigation
                 swiperSlides.push(slide);
 
-                // Initially hide all reflections (will be revealed later)
-                reflection.classList.add('fade-in');
+                // --- Add event listener to match #reflection with #ref-slide ---
+                reflection.addEventListener('click', () => {
+                    openPopup(index, swiper); // Open popup with the correct slide and control Swiper
+                });
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
@@ -151,51 +161,37 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Initialize Intersection Observer to trigger fade-in for the first reflection item
+            // Initialize Intersection Observer to trigger fade-in and position animations
             const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         const target = entry.target;
 
-                        // Randomly reveal items with 'fade-in-visible'
-                        let reflections = Array.from(document.querySelectorAll('.fade-in'));
-                        shuffleArray(reflections); // Shuffle the reflections array for random reveal
+                        // Fade in the reflection smoothly using CSS classes
+                        target.classList.add('fade-in-visible');
 
-                        reflections.forEach((reflection, index) => {
-                            setTimeout(() => {
-                                reflection.classList.add('fade-in-visible');
-                            }, index * 500); // 500ms delay for each item, adjust to taste
-                        });
-
-                        // Unobserve the first reflection after the fade-in starts
+                        // Unobserve after triggering to prevent re-triggering the animation
                         observer.unobserve(target);
                     }
                 });
             }, observerOptions);
 
-            // Apply the observer to the first reflection item to trigger the random reveal
-            const firstReflection = document.querySelector('.fade-in');
-            observer.observe(firstReflection);
+            // Apply observer to all reflection items
+            const allReflections = document.querySelectorAll('.fade-in');
+            allReflections.forEach((reflection, index) => {
+                observer.observe(reflection);
+            });
         }
     };
 
     // Send the request to load the reflections data
     request.send();
-}
-
-// Shuffle function for random order
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap randomly
-    }
-    return array;
 }
 
 // Function to open the popup and show the matching slide
