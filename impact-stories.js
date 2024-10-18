@@ -43,9 +43,6 @@ function getStories() {
                 // Remove all classes and reassign only the base class
                 card.className = baseClass;
 
-                // Set the opacity to 0 initially to make the fade-in effect visible
-                //card.style.opacity = '0';
-
                 // Get all IMG elements within the cloned card and set their src and srcset attributes
                 const imgs = card.getElementsByTagName('IMG');
                 for (let i = 0; i < imgs.length; i++) {
@@ -57,9 +54,23 @@ function getStories() {
                 const h3 = card.getElementsByTagName('H3')[0];
                 h3.textContent = storyItem.Story_Title;
 
-                // Set the text content of the first P element to the story description
-                const p = card.getElementsByTagName('P')[0];
-                p.textContent = storyItem.Story_Description;
+                // Handle multiple paragraphs for story description
+                const richTextContainer = card.getElementsByClassName('w-richtext')[0]; // Ensure the Rich Text element has this class
+
+                // Check if the description is an array (multiple paragraphs)
+                if (Array.isArray(storyItem.Story_Description)) {
+                    // Build the description with <p> tags for each paragraph
+                    let descriptionHTML = '';
+                    storyItem.Story_Description.forEach(paragraph => {
+                        descriptionHTML += `<p>${paragraph}</p>`;
+                    });
+
+                    // Inject the HTML into the Rich Text element
+                    richTextContainer.innerHTML = descriptionHTML;
+                } else {
+                    // If it's a single string, wrap it in <p> and inject it
+                    richTextContainer.innerHTML = `<p>${storyItem.Story_Description}</p>`;
+                }
 
                 // Append the cloned card to the appropriate container
                 if (index < 4) {
