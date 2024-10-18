@@ -126,11 +126,8 @@ function getReflections() {
                     openPopup(index, swiper); // Open popup with the correct slide and control Swiper
                 });
 
-                // --- Apply fade-in delay using setTimeout ---
-                setTimeout(() => {
-                    // Add fade-in class for smooth transition with delay
-                    reflection.classList.add('fade-in-visible');
-                }, index * 200); // Delay by 300ms for each item
+                // Initially hide all reflections (will be faded in later)
+                reflection.classList.add('fade-in');
             });
 
             // Optionally, remove the original template reflection and slide from the DOM if not needed
@@ -160,32 +157,38 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Initialize Intersection Observer to trigger fade-in and position animations
+            // Initialize Intersection Observer to trigger fade-in and position animations for the first item
             const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
                 threshold: 0.1 // Trigger when 10% of the element is visible
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const target = entry.target;
 
-                        // Fade in the reflection smoothly using CSS classes
+                        // Fade in the first reflection
                         target.classList.add('fade-in-visible');
 
-                        // Unobserve after triggering to prevent re-triggering the animation
+                        // After the first reflection fades in, fade in the rest one by one
+                        const allReflections = document.querySelectorAll('.fade-in');
+                        allReflections.forEach((reflection, index) => {
+                            setTimeout(() => {
+                                reflection.classList.add('fade-in-visible');
+                            }, index * 100); // 300ms delay between each fade
+                        });
+
+                        // Unobserve the first reflection after the fade-in starts
                         observer.unobserve(target);
                     }
                 });
             }, observerOptions);
 
-            // Apply observer to all reflection items
-            const allReflections = document.querySelectorAll('.fade-in');
-            allReflections.forEach((reflection, index) => {
-                observer.observe(reflection);
-            });
+            // Apply the observer only to the first reflection item
+            const firstReflection = document.querySelector('.fade-in');
+            observer.observe(firstReflection);
         }
     };
 
