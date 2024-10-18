@@ -91,7 +91,7 @@ function getReflections() {
                 reflectionLocation.textContent = reflectionItem['Rep Location'];
 
                 // Ensure the reflection is visible
-                reflection.style.display = 'block';
+                reflection.style.display = 'flex';
 
                 // Add fade-in class for smooth transition
                 reflection.classList.add('fade-in');
