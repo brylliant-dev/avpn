@@ -117,7 +117,7 @@ function getReflections() {
                 slideDesignation.textContent = reflectionItem['Rep Designation'];
 
                 // Ensure the slide is visible
-                slide.style.display = 'block';
+                slide.style.display = 'flex';
 
                 // Add fade-in class for smooth transition
                 slide.classList.add('fade-in');
