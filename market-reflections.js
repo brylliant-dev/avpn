@@ -78,7 +78,6 @@ function getReflections() {
                 slide.setAttribute('data-id', index);
 
                 // --- Populate the cloned #reflection ---
-                // Set the rep-image and rep-location in the reflection
                 const reflectionImg = reflection.querySelector('.rep-image');
                 const reflectionLocation = reflection.querySelector('.rep-location');
 
@@ -121,12 +120,7 @@ function getReflections() {
                 // Store slide ID for navigation
                 swiperSlides.push(slide);
 
-                // --- Add event listener to match #reflection with #ref-slide ---
-                reflection.addEventListener('click', () => {
-                    openPopup(index, swiper); // Open popup with the correct slide and control Swiper
-                });
-
-                // Initially hide all reflections (will be faded in later)
+                // Initially hide all reflections (will be revealed later)
                 reflection.classList.add('fade-in');
             });
 
@@ -157,7 +151,7 @@ function getReflections() {
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
 
-            // Initialize Intersection Observer to trigger fade-in and position animations for the first item
+            // Initialize Intersection Observer to trigger fade-in for the first reflection item
             const observerOptions = {
                 root: null, // null makes it relative to the viewport
                 rootMargin: '0px',
@@ -169,15 +163,14 @@ function getReflections() {
                     if (entry.isIntersecting) {
                         const target = entry.target;
 
-                        // Fade in the first reflection
-                        target.classList.add('fade-in-visible');
+                        // Randomly reveal items with 'fade-in-visible'
+                        let reflections = Array.from(document.querySelectorAll('.fade-in'));
+                        shuffleArray(reflections); // Shuffle the reflections array for random reveal
 
-                        // After the first reflection fades in, fade in the rest one by one
-                        const allReflections = document.querySelectorAll('.fade-in');
-                        allReflections.forEach((reflection, index) => {
-                            
+                        reflections.forEach((reflection, index) => {
+                            setTimeout(() => {
                                 reflection.classList.add('fade-in-visible');
-                            
+                            }, index * 500); // 500ms delay for each item, adjust to taste
                         });
 
                         // Unobserve the first reflection after the fade-in starts
@@ -186,7 +179,7 @@ function getReflections() {
                 });
             }, observerOptions);
 
-            // Apply the observer only to the first reflection item
+            // Apply the observer to the first reflection item to trigger the random reveal
             const firstReflection = document.querySelector('.fade-in');
             observer.observe(firstReflection);
         }
@@ -194,6 +187,15 @@ function getReflections() {
 
     // Send the request to load the reflections data
     request.send();
+}
+
+// Shuffle function for random order
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap randomly
+    }
+    return array;
 }
 
 // Function to open the popup and show the matching slide
