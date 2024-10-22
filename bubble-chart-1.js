@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             label: function (tooltipItem) {
                                 const label = labels[tooltipItem.dataIndex];
                                 const percentage = tooltipItem.raw.y;
-                                return `${label}: ${percentage}%`;
+                                return `${percentage}%`;
                             }
                         }
                     }
