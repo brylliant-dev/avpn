@@ -1,5 +1,5 @@
 // Create a variable for the API endpoint
-let xanoUrl = new URL('https://brylliant-dev.github.io/avpn/impact-stories-data.json');
+let dataURL = new URL('https://brylliant-dev.github.io/avpn/impact-stories-data.json');
 
 // Define a function to get impact stories information
 function getStories() {
@@ -7,7 +7,7 @@ function getStories() {
     let request = new XMLHttpRequest();
 
     // Convert the URL object to a string
-    let url = xanoUrl.toString();
+    let url = dataURL.toString();
 
     // Open a GET request to the URL
     request.open('GET', url, true);
