@@ -72,11 +72,14 @@ function getStories() {
                     richTextContainer.innerHTML = `<p>${storyItem.Story_Description}</p>`;
                 }
 
-                // Now handle the popup image
-                const popupImageElement = card.querySelector('.review_impact_story_popup_image img'); // Assuming .popup-image is the class for the popup image element
-                if (popupImageElement) {
-                    popupImageElement.src = storyItem.Story_Image_Popup_URL; // Set the image source for the popup
-                    popupImageElement.srcset = storyItem.Story_Image_Popup_URL;
+                // Handle the popup image inside review_impact_story_popup_image div
+                const popupImageDiv = card.querySelector('.review_impact_story_popup_image');
+                if (popupImageDiv) {
+                    const popupImage = popupImageDiv.getElementsByTagName('IMG')[0]; // Assume the image is inside this div
+                    if (popupImage) {
+                        popupImage.src = storyItem.Story_Image_Popup_URL; // Set the popup image source
+                        popupImage.srcset = storyItem.Story_Image_Popup_URL;
+                    }
                 }
 
                 // Append the cloned card to the appropriate container
