@@ -58,8 +58,8 @@ function getStories() {
                 if (popupImageDiv) {
                     const popupImage = popupImageDiv.getElementsByTagName('IMG')[0]; // Get the image element
                     if (popupImage) {
-                        popupImage.src = storyItem.Story_Image_Popup_URL; // Set the popup image URL
-                        popupImage.srcset = storyItem.Story_Image_Popup_URL;
+                        popupImage.src = storyItem.Story_image_Popup_URL; // Set the popup image URL
+                        popupImage.srcset = storyItem.Story_image_Popup_URL;
                     }
                 }
 
