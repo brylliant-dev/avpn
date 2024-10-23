@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chartContainer = document.getElementById("bubble-chart-1");
     let myChart = null; // Variable to hold the bubble chart instance
-    
     // Function to initialize the bubble chart
     function initializeBubbleChart() {
         if (myChart) {
             myChart.destroy();
         }
-
         const chartData = [
             { label: 'Ageing', percentage: 16 },
             { label: 'Agriculture', percentage: 33 },
@@ -25,25 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Livelihood & Poverty Alleviation', percentage: 51 },
             { label: 'Nutrition', percentage: 23 },
             { label: 'Water, Sanitation & Hygiene', percentage: 29 },
-        ]
-
-        const maxRadius = window.innerWidth < 480 ? 20 : 40;
-        const minRadius = window.innerWidth < 480 ? 5 : 10;
+        ];
+        const isMobile = window.innerWidth < 480;
+        const maxRadius = isMobile ? 20 : 40;
+        const minRadius = isMobile ? 5 : 10;
         const scaleRadius = (percentage) => {
             const scale = (maxRadius - minRadius) / 100;
             return minRadius + (percentage * scale);
         };
-
-        const labels = chartData.map(cd => cd.label)
+        const labels = chartData.map(cd => cd.label);
         const data = {
             labels,
             datasets: [
                 {
                     label: 'Percentage',
-                    data: chartData.map(cd => cd.percentage).map((percentage, index) => ({
-                        x: index,
-                        y: percentage,
-                        r: scaleRadius(percentage)
+                    data: chartData.map((cd, index) => ({
+                        x: isMobile ? cd.percentage : index, // Swap x and y values on mobile
+                        y: isMobile ? index : cd.percentage,
+                        r: scaleRadius(cd.percentage)
                     })),
                     backgroundColor: "#f27c38",
                     borderWidth: 1,
@@ -52,10 +49,68 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ]
         };
-        const isMobile = window.innerWidth < 480;
         const xFontSize = isMobile ? 8 : 14; // Smaller font size for mobile
         const maxRotation = isMobile ? 90 : 45; // Increase rotation for better readability on mobile
         const paddingBottom = isMobile ? 140 : 40; // Increase bottom padding for mobile
+        // Adjust scales based on mobile or desktop
+        const scales = isMobile
+            ? {
+                x: {
+                    title: { display: false },
+                    grid: { display: true, drawBorder: true },
+                    ticks: {
+                        color: '#002944',
+                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        callback: function (value) { return value + '%'; },
+                        beginAtZero: true,
+                        max: 70,
+                        stepSize: 10 // Set x-axis step size to 10 for mobile
+                    }
+                },
+                y: {
+                    title: { display: false },
+                    grid: { display: true, drawBorder: true, drawOnChartArea: true },
+                    ticks: {
+                        color: '#002944',
+                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        min: 0,
+                        max: labels.length - 1,
+                        stepSize: 1,
+                        autoSkip: false,
+                        callback: function (value) { return labels[value]; },
+                        maxRotation: maxRotation, // Adjust rotation for better readability
+                        minRotation: 0
+                    }
+                }
+            }
+            : {
+                x: {
+                    title: { display: false },
+                    grid: { display: true, drawBorder: true },
+                    ticks: {
+                        color: '#002944',
+                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        min: 0,
+                        max: labels.length - 1,
+                        stepSize: 1, // Regular increment for desktop
+                        autoSkip: false,
+                        callback: function (value) { return labels[value]; },
+                        maxRotation: maxRotation, // Adjust rotation for better readability
+                        minRotation: 0
+                    }
+                },
+                y: {
+                    title: { display: false },
+                    grid: { display: true, drawBorder: true, drawOnChartArea: true },
+                    ticks: {
+                        color: '#002944',
+                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        callback: function (value) { return value + '%'; },
+                        beginAtZero: true,
+                        max: 70
+                    }
+                }
+            };
         myChart = new Chart(chartContainer, {
             type: 'bubble',
             data: data,
@@ -70,34 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         bottom: paddingBottom
                     }
                 },
-                scales: {
-                    x: {
-                        title: { display: false },
-                        grid: { display: true, drawBorder: true },
-                        ticks: {
-                            color: '#002944',
-                            font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
-                            min: 0,
-                            max: labels.length - 1,
-                            stepSize: 1,
-                            autoSkip: false,
-                            callback: function (value) { return labels[value]; },
-                            maxRotation: maxRotation, // Adjust rotation for better readability
-                            minRotation: 0
-                        }
-                    },
-                    y: {
-                        title: { display: false },
-                        grid: { display: true, drawBorder: true, drawOnChartArea: true },
-                        ticks: {
-                            color: '#002944',
-                            font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
-                            callback: function (value) { return value + '%'; },
-                            beginAtZero: true,
-                            max: 70
-                        }
-                    }
-                },
+                scales: scales,
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -112,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         callbacks: {
                             label: function (tooltipItem) {
                                 const label = labels[tooltipItem.dataIndex];
-                                const percentage = tooltipItem.raw.y;
+                                const percentage = tooltipItem.raw.x; // Swap tooltip percentage display
                                 return `${percentage}%`;
                             }
                         }
@@ -144,4 +172,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Start observing Swiper slide changes
     observeSwiperSlideChanges();
-})
+});
