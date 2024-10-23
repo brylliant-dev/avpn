@@ -19,35 +19,21 @@ function getReflections() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Custom sorting order for 'Rep Location'
-            const locationOrder = [
-                'Global Markets, Australia, and New Zealand',
-                'Southeast Asia',
-                'South Asia',
-                'Northeast Asia',
-                'West Asia',
-                'Bangladesh',
-                'China',
-                'Europe, United Kingdom',
-                'Hong Kong SAR China',
-                'India',
-                'Indonesia',
-                'Japan',
-                'Malaysia',
-                'Mekong Region',
-                'Philippines',
-                'Singapore',
-                'South Korea',
-                'Taiwan',
-                'Vietnam'
-            ];
-
-            // Sort the data based on the custom location order
+            // Custom sorting to always have 'Global Markets, Australia, and New Zealand' first
             data.sort((a, b) => {
+                // Define the key location to prioritize
+                const priorityLocation = 'Global Markets, Australia, and New Zealand';
+                
+                // Get the 'Rep Location' for each item
                 let locationA = a['Rep Location'];
                 let locationB = b['Rep Location'];
 
-                return locationOrder.indexOf(locationA) - locationOrder.indexOf(locationB);
+                // Check if either location is the priority location
+                if (locationA === priorityLocation) return -1; // Make this always appear first
+                if (locationB === priorityLocation) return 1;
+
+                // For all other locations, sort alphabetically
+                return locationA.localeCompare(locationB);
             });
 
             // Get the containers where the reflections and slides will be placed
