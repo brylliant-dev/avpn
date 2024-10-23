@@ -43,11 +43,24 @@ function getStories() {
                 // Remove all classes and reassign only the base class
                 card.className = baseClass;
 
-                // Get all IMG elements within the cloned card and set their src and srcset attributes
-                const imgs = card.getElementsByTagName('IMG');
-                for (let i = 0; i < imgs.length; i++) {
-                    imgs[i].src = storyItem.Story_Image_URL; // Thumbnail image
-                    imgs[i].srcset = storyItem.Story_Image_URL;
+                // Set the image for the story in the 'review_impact_story_image' div
+                const storyImageDiv = card.querySelector('.review_impact_story_image');
+                if (storyImageDiv) {
+                    const storyImage = storyImageDiv.getElementsByTagName('IMG')[0]; // Get the image element
+                    if (storyImage) {
+                        storyImage.src = storyItem.Story_Image_URL; // Set the image URL for the story
+                        storyImage.srcset = storyItem.Story_Image_URL;
+                    }
+                }
+
+                // Handle the popup image inside 'review_impact_story_popup_image' div
+                const popupImageDiv = card.querySelector('.review_impact_story_popup_image');
+                if (popupImageDiv) {
+                    const popupImage = popupImageDiv.getElementsByTagName('IMG')[0]; // Get the image element
+                    if (popupImage) {
+                        popupImage.src = storyItem.Story_Image_Popup_URL; // Set the popup image URL
+                        popupImage.srcset = storyItem.Story_Image_Popup_URL;
+                    }
                 }
 
                 // Set the text content of the h3 element to the story title
@@ -70,16 +83,6 @@ function getStories() {
                 } else {
                     // If it's a single string, wrap it in <p> and inject it
                     richTextContainer.innerHTML = `<p>${storyItem.Story_Description}</p>`;
-                }
-
-                // Handle the popup image inside review_impact_story_popup_image div
-                const popupImageDiv = card.querySelector('.review_impact_story_popup_image');
-                if (popupImageDiv) {
-                    const popupImage = popupImageDiv.getElementsByTagName('IMG')[0]; // Assume the image is inside this div
-                    if (popupImage) {
-                        popupImage.src = storyItem.Story_Image_Popup_URL; // Set the popup image source
-                        popupImage.srcset = storyItem.Story_Image_Popup_URL;
-                    }
                 }
 
                 // Append the cloned card to the appropriate container
