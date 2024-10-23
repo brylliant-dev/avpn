@@ -46,7 +46,7 @@ function getStories() {
                 // Get all IMG elements within the cloned card and set their src and srcset attributes
                 const imgs = card.getElementsByTagName('IMG');
                 for (let i = 0; i < imgs.length; i++) {
-                    imgs[i].src = storyItem.Story_Image_URL;
+                    imgs[i].src = storyItem.Story_Image_URL; // Thumbnail image
                     imgs[i].srcset = storyItem.Story_Image_URL;
                 }
 
@@ -72,6 +72,13 @@ function getStories() {
                     richTextContainer.innerHTML = `<p>${storyItem.Story_Description}</p>`;
                 }
 
+                // Now handle the popup image
+                const popupImageElement = card.querySelector('.review_impact_story_popup_image img'); // Assuming .popup-image is the class for the popup image element
+                if (popupImageElement) {
+                    popupImageElement.src = storyItem.Story_Image_Popup_URL; // Set the image source for the popup
+                    popupImageElement.srcset = storyItem.Story_Image_Popup_URL;
+                }
+
                 // Append the cloned card to the appropriate container
                 if (index < 4) {
                     cardContainer1.appendChild(card); // First 4 stories to impact-stories
@@ -81,7 +88,7 @@ function getStories() {
             });
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
-            //Webflow.require('ix2').init();
+            // Webflow.require('ix2').init();
         }
     };
 
