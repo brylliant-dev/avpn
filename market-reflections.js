@@ -24,7 +24,7 @@ function getReflections() {
                 'Global Markets, Australia, and New Zealand',
                 'Southeast Asia',
                 'South Asia',
-                'North Asia',
+                'Northeast Asia',
                 'West Asia'
             ];
 
