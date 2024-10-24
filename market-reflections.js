@@ -19,35 +19,37 @@ function getReflections() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Custom sorting order for predefined locations
+            // Custom sorting order for specific locations
             const customOrder = [
-                'Global Markets', 
-                'Southeast Asia', 
-                'South Asia', 
-                'North Asia', 
+                'Global Markets, Australia, and New Zealand',
+                'Southeast Asia',
+                'South Asia',
+                'North Asia',
                 'West Asia'
             ];
 
-            // Sort the data based on the custom order for specific locations, 
-            // and then alphabetically for the remaining locations
+            // Sort the data with the custom order first, then alphabetically for the rest
             data.sort((a, b) => {
                 let locationA = a['Rep Location'];
                 let locationB = b['Rep Location'];
 
-                // Get the index of each location in the custom order array
                 let indexA = customOrder.indexOf(locationA);
                 let indexB = customOrder.indexOf(locationB);
 
-                // If both locations are in the custom order array, sort by that order
+                // If both are in the custom order, sort by their position in the custom order
                 if (indexA !== -1 && indexB !== -1) {
                     return indexA - indexB;
                 }
 
-                // If only one is in the custom order, prioritize it
-                if (indexA !== -1) return -1;
-                if (indexB !== -1) return 1;
+                // If only one is in the custom order, it should come first
+                if (indexA !== -1) {
+                    return -1;
+                }
+                if (indexB !== -1) {
+                    return 1;
+                }
 
-                // For locations not in the custom order, sort alphabetically
+                // If neither is in the custom order, sort alphabetically
                 return locationA.localeCompare(locationB);
             });
 
