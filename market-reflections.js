@@ -19,20 +19,35 @@ function getReflections() {
 
         // Check if the request was successful
         if (request.status >= 200 && request.status < 400) {
-            // Custom sorting to always have 'Global Markets, Australia, and New Zealand' first
+            // Custom sorting order for predefined locations
+            const customOrder = [
+                'Global Markets', 
+                'Southeast Asia', 
+                'South Asia', 
+                'North Asia', 
+                'West Asia'
+            ];
+
+            // Sort the data based on the custom order for specific locations, 
+            // and then alphabetically for the remaining locations
             data.sort((a, b) => {
-                // Define the key location to prioritize
-                const priorityLocation = 'Global Markets, Australia, and New Zealand';
-                
-                // Get the 'Rep Location' for each item
                 let locationA = a['Rep Location'];
                 let locationB = b['Rep Location'];
 
-                // Check if either location is the priority location
-                if (locationA === priorityLocation) return -1; // Make this always appear first
-                if (locationB === priorityLocation) return 1;
+                // Get the index of each location in the custom order array
+                let indexA = customOrder.indexOf(locationA);
+                let indexB = customOrder.indexOf(locationB);
 
-                // For all other locations, sort alphabetically
+                // If both locations are in the custom order array, sort by that order
+                if (indexA !== -1 && indexB !== -1) {
+                    return indexA - indexB;
+                }
+
+                // If only one is in the custom order, prioritize it
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+
+                // For locations not in the custom order, sort alphabetically
                 return locationA.localeCompare(locationB);
             });
 
