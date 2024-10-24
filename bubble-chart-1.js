@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chartContainer = document.getElementById("bubble-chart-1");
     let myChart = null; // Variable to hold the bubble chart instance
+    
     // Function to initialize the bubble chart
     function initializeBubbleChart() {
         if (myChart) {
-            myChart.destroy();
+            myChart.destroy(); // Destroy the old chart instance if it exists
         }
+        
         const chartData = [
             { label: 'Ageing', percentage: 16 },
             { label: 'Agriculture', percentage: 33 },
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Nutrition', percentage: 23 },
             { label: 'Water, Sanitation & Hygiene', percentage: 29 },
         ];
+        
         const isMobile = window.innerWidth < 480;
         const maxRadius = isMobile ? 20 : 40;
         const minRadius = isMobile ? 5 : 10;
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const scale = (maxRadius - minRadius) / 100;
             return minRadius + (percentage * scale);
         };
+        
         const labels = chartData.map(cd => cd.label);
         const data = {
             labels,
@@ -49,9 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ]
         };
+        
         const xFontSize = isMobile ? 8 : 14; // Smaller font size for mobile
         const maxRotation = isMobile ? 90 : 45; // Increase rotation for better readability on mobile
         const paddingBottom = isMobile ? 140 : 40; // Increase bottom padding for mobile
+        
         // Adjust scales based on mobile or desktop
         const scales = isMobile
             ? {
@@ -111,12 +117,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             };
+        
+        // Create the chart with full-width/height canvas
         myChart = new Chart(chartContainer, {
             type: 'bubble',
             data: data,
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: false, // Ensure full container fill without aspect ratio restrictions
                 layout: {
                     padding: {
                         left: 10,
@@ -157,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    
     // Function to observe when Swiper slide becomes active
     function observeSwiperSlideChanges() {
         const swiperSlides = document.querySelectorAll('.review_members_slide.swiper-slide');
@@ -164,12 +173,13 @@ document.addEventListener("DOMContentLoaded", function () {
             swiper.on('transitionEnd', function () {
                 if (slide.classList.contains('swiper-slide-active')) {
                     if (slide.contains(chartContainer)) {
-                        initializeBubbleChart()
+                        initializeBubbleChart();
                     }
                 }
             });
         });
     }
+
     // Start observing Swiper slide changes
     observeSwiperSlideChanges();
 });
