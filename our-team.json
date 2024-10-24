@@ -19,7 +19,7 @@
     "ID": 3,
     "Team": "Board Members",
     "Name": "Naina Subberwal Batra",
-    "Designation": "Chief Executive Officer",
+    "Designation": "Chief Executive Officer at AVPN",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Naina-Subberwal-Batra-AVPN2024.png",
     "SortOrder": 4
   },
@@ -88,108 +88,12 @@
     "SortOrder": 2
   },
   {
-    "ID": 12,
-    "Team": "AVPN HQ",
-    "Name": "Amy Lim",
-    "Designation": "Executive Director, Partnerships",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Amy-Lim-AVPN2024.png",
-    "SortOrder": 3
-  },
-  {
-    "ID": 13,
-    "Team": "AVPN HQ",
-    "Name": "Aravindan Srinivasan",
-    "Designation": "Executive Director, Climate Action",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Aravindan-Srinivasan-AVPN2024.png",
-    "SortOrder": 4
-  },
-  {
-    "ID": 14,
-    "Team": "AVPN HQ",
-    "Name": "Ruth Jones",
-    "Designation": "Chief of  Markets",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Ruth-Jones-AVPN2024.png",
-    "SortOrder": 5
-  },
-  {
-    "ID": 15,
-    "Team": "AVPN HQ",
-    "Name": "Debrah Jiang",
-    "Designation": "Chief of Staff",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Debrah-Jiang-AVPN2024.png",
-    "SortOrder": 6
-  },
-  {
-    "ID": 16,
-    "Team": "AVPN HQ",
-    "Name": "Kevin Teo",
-    "Designation": "Chief Technology Officer and Head of ImpactCollab",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Kevin-Teo-AVPN2024.png",
-    "SortOrder": 7
-  },
-  {
-    "ID": 17,
-    "Team": "AVPN HQ",
-    "Name": "Komal Sahu",
-    "Designation": "Chief of Sustainable Finance",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/06/Komal-Sahu-AVPN2024.jpg",
-    "SortOrder": 8
-  },
-  {
-    "ID": 18,
-    "Team": "AVPN HQ",
-    "Name": "Madhavika Bajoria",
-    "Designation": "Executive Director, Health Impact",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Madhavika-Bajoria-AVPN2024.png",
-    "SortOrder": 9
-  },
-  {
-    "ID": 19,
-    "Team": "AVPN HQ",
-    "Name": "Moutushi Sengupta",
-    "Designation": "Chief of Capital Mobilisation, Executive Director, Gender Equality and South Asia Coordinator",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Moutushi-Sengupta-AVPN2024.png",
-    "SortOrder": 10
-  },
-  {
-    "ID": 20,
-    "Team": "AVPN HQ",
-    "Name": "Roshini Prakash",
-    "Designation": "Chief Knowledge Officer and South East Asia Coordinator",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Roshini-Prakash-AVPN2024.png",
-    "SortOrder": 11
-  },
-  {
-    "ID": 21,
-    "Team": "AVPN HQ",
-    "Name": "Susie Lim-Kannan",
-    "Designation": "Chief Marketing and Communications Officer",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Susie-Lim-Kannan-AVPN2024.png",
-    "SortOrder": 12
-  },
-  {
-    "ID": 22,
-    "Team": "AVPN HQ",
-    "Name": "Tristan Ace",
-    "Designation": "Chief Engagement Officer, Policy Head and Northeast Asia Coordinator",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Tristan-Ace-AVPN2024.png",
-    "SortOrder": 13
-  },
-  {
-    "ID": 23,
-    "Team": "AVPN HQ",
-    "Name": "Vikas Arora",
-    "Designation": "Chief of Impact Investing",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Vikas-Arora-AVPN2024.png",
-    "SortOrder": 14
-  },
-  {
     "ID": 24,
     "Team": "AVPN HQ",
     "Name": "Aaron Chen",
     "Designation": "Associate, Events",
     "Image": "https://avpn.asia/wp-content/uploads/2021/07/Aaron-Chen-AVPN2024.png",
-    "SortOrder": 15
+    "SortOrder": 3
   },
   {
     "ID": 25,
@@ -197,7 +101,7 @@
     "Name": "Aditi Khatri",
     "Designation": "Assistant Manager, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/10/Aditi-Khatri-AVPN2024.webp",
-    "SortOrder": 16
+    "SortOrder": 4
   },
   {
     "ID": 26,
@@ -205,7 +109,7 @@
     "Name": "Agnes Arbon",
     "Designation": "Manager, Markets",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Agnes-Arbon-AVPN2024.png",
-    "SortOrder": 17
+    "SortOrder": 5
   },
   {
     "ID": 27,
@@ -213,7 +117,7 @@
     "Name": "Alfred Poon",
     "Designation": "Director, Digital Transformation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Alfred-Poon-AVPN2024.png",
-    "SortOrder": 18
+    "SortOrder": 6
   },
   {
     "ID": 28,
@@ -221,7 +125,15 @@
     "Name": "Alice Harada",
     "Designation": "Senior Manager, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/09/Alice-Harada.webp",
-    "SortOrder": 19
+    "SortOrder": 7
+  },
+  {
+    "ID": 12,
+    "Team": "AVPN HQ",
+    "Name": "Amy Lim",
+    "Designation": "Executive Director, Partnerships",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Amy-Lim-AVPN2024.png",
+    "SortOrder": 8
   },
   {
     "ID": 29,
@@ -229,15 +141,7 @@
     "Name": "Anindita Bose",
     "Designation": "Project Manager, Digital Transformation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Anindita-Bose-AVPN2024.webp",
-    "SortOrder": 20
-  },
-  {
-    "ID": 30,
-    "Team": "AVPN HQ",
-    "Name": "Anu Priya",
-    "Designation": "Manager, Capital Mobilisation",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/06/Anu-Priya-AVPN2024.jpg",
-    "SortOrder": 21
+    "SortOrder": 9
   },
   {
     "ID": 31,
@@ -245,15 +149,23 @@
     "Name": "Annabel Tang",
     "Designation": "Partnerships Director, North East Asia",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Annabel-Tang-AVPN2024.png",
-    "SortOrder": 22
+    "SortOrder": 10
   },
   {
-    "ID": 32,
+    "ID": 30,
     "Team": "AVPN HQ",
-    "Name": "Astari Sarosa",
-    "Designation": "Assistant Manager, Marketing & Communications",
-    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Astari-Sarosa-AVPN2024.png",
-    "SortOrder": 23
+    "Name": "Anu Priya",
+    "Designation": "Manager, Capital Mobilisation",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/06/Anu-Priya-AVPN2024.jpg",
+    "SortOrder": 11
+  },
+  {
+    "ID": 13,
+    "Team": "AVPN HQ",
+    "Name": "Aravindan Srinivasan",
+    "Designation": "Executive Director, Climate Action",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Aravindan-Srinivasan-AVPN2024.png",
+    "SortOrder": 12
   },
   {
     "ID": 33,
@@ -261,7 +173,15 @@
     "Name": "Arnil Paras",
     "Designation": "Executive Director, Insights and Academy",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Arnil-Paras-AVPN2024.png",
-    "SortOrder": 24
+    "SortOrder": 13
+  },
+  {
+    "ID": 32,
+    "Team": "AVPN HQ",
+    "Name": "Astari Sarosa",
+    "Designation": "Assistant Manager, Marketing & Communications",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Astari-Sarosa-AVPN2024.png",
+    "SortOrder": 14
   },
   {
     "ID": 34,
@@ -269,7 +189,7 @@
     "Name": "Ayu Ariyanti",
     "Designation": "Manager, Platform",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Ayu-Ariyanti-AVPN2024.jpg",
-    "SortOrder": 25
+    "SortOrder": 15
   },
   {
     "ID": 35,
@@ -277,7 +197,7 @@
     "Name": "Bhawani Maurya",
     "Designation": "Senior Manager, Health Impact",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Bhawani-Maurya-AVPN2024.jpg",
-    "SortOrder": 26
+    "SortOrder": 16
   },
   {
     "ID": 36,
@@ -285,7 +205,7 @@
     "Name": "Camille Barlis",
     "Designation": "Senior Associate, Markets",
     "Image": "https://avpn.asia/wp-content/uploads/2024/10/Camille-Barlis-AVPN2024.webp",
-    "SortOrder": 27
+    "SortOrder": 17
   },
   {
     "ID": 37,
@@ -293,7 +213,7 @@
     "Name": "Chelsea Murphy",
     "Designation": "Senior Associate, Creatives",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Chelsea-Murphy-AVPN2024.jpg",
-    "SortOrder": 28
+    "SortOrder": 18
   },
   {
     "ID": 38,
@@ -301,7 +221,7 @@
     "Name": "Christina Ameln",
     "Designation": "Director, Insights & Academy",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Christina-Ameln-AVPN2024.png",
-    "SortOrder": 29
+    "SortOrder": 19
   },
   {
     "ID": 39,
@@ -309,7 +229,7 @@
     "Name": "David Lim",
     "Designation": "Assistant Director, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/David-Lim-AVPN2024.png",
-    "SortOrder": 30
+    "SortOrder": 20
   },
   {
     "ID": 40,
@@ -317,7 +237,15 @@
     "Name": "Deborah Foo",
     "Designation": "Senior Manager, Gender Equality Platform",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Deborah-Foo-AVPN2024.png",
-    "SortOrder": 31
+    "SortOrder": 21
+  },
+  {
+    "ID": 15,
+    "Team": "AVPN HQ",
+    "Name": "Debrah Jiang",
+    "Designation": "Chief of Staff",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Debrah-Jiang-AVPN2024.png",
+    "SortOrder": 22
   },
   {
     "ID": 41,
@@ -325,7 +253,7 @@
     "Name": "Elsa Varghese",
     "Designation": "Director HR",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Elsa-Verghese-AVPN2024.png",
-    "SortOrder": 32
+    "SortOrder": 23
   },
   {
     "ID": 42,
@@ -333,7 +261,7 @@
     "Name": "Evelyn Wong",
     "Designation": "Director, Policy",
     "Image": "https://avpn.asia/wp-content/uploads/2024/09/Evelyn-Wong-AVPN2024.webp",
-    "SortOrder": 33
+    "SortOrder": 24
   },
   {
     "ID": 43,
@@ -341,7 +269,7 @@
     "Name": "Fazrin Rahman",
     "Designation": "Assistant Manager, Partnerships",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Fazrin-AVPN2024.jpg",
-    "SortOrder": 34
+    "SortOrder": 25
   },
   {
     "ID": 44,
@@ -349,7 +277,7 @@
     "Name": "Gopika Mahapatra",
     "Designation": "Senior Associate, Knowledge",
     "Image": "https://avpn.asia/wp-content/uploads/2024/09/Gopika-Mahapatra-AVPN2024.webp",
-    "SortOrder": 35
+    "SortOrder": 26
   },
   {
     "ID": 45,
@@ -357,7 +285,7 @@
     "Name": "Harshita Agrawal",
     "Designation": "Associate, Human Resources",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/HArshita-Agrawal-AVPN2024.jpg",
-    "SortOrder": 36
+    "SortOrder": 27
   },
   {
     "ID": 46,
@@ -365,7 +293,7 @@
     "Name": "Hiral Sarvaiya Chauhan",
     "Designation": "Senior Manager, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Hiral-Sarvaiya-Chauhan-AVPN2024.jpg",
-    "SortOrder": 37
+    "SortOrder": 28
   },
   {
     "ID": 47,
@@ -373,7 +301,7 @@
     "Name": "Jacklin Kertayasa",
     "Designation": "Senior Associate, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Jacklin-Kertayasa-AVPN2024.webp",
-    "SortOrder": 38
+    "SortOrder": 29
   },
   {
     "ID": 48,
@@ -381,7 +309,7 @@
     "Name": "Janice Zhang",
     "Designation": "Senior Manager, Events",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Janice-Zhang-AVPN2024.png",
-    "SortOrder": 39
+    "SortOrder": 30
   },
   {
     "ID": 49,
@@ -389,7 +317,7 @@
     "Name": "Jenny Lee",
     "Designation": "Manager, Office",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Jenny-Lee-AVPN2024.png",
-    "SortOrder": 40
+    "SortOrder": 31
   },
   {
     "ID": 50,
@@ -397,7 +325,7 @@
     "Name": "Katrina Agulan",
     "Designation": "Manager, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Katrina-Agulan-AVPN2024.jpg",
-    "SortOrder": 41
+    "SortOrder": 32
   },
   {
     "ID": 51,
@@ -405,7 +333,7 @@
     "Name": "Kavita Tatwadi",
     "Designation": "Senior Manager, Impact Measurement and Management",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Kavita-Tatwadi-2-AVPN2024.webp",
-    "SortOrder": 42
+    "SortOrder": 33
   },
   {
     "ID": 52,
@@ -413,7 +341,15 @@
     "Name": "Kaycel Cabahug",
     "Designation": "Senior Associate, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Kaycel-Cabahug-AVPN2024.jpg",
-    "SortOrder": 43
+    "SortOrder": 34
+  },
+  {
+    "ID": 16,
+    "Team": "AVPN HQ",
+    "Name": "Kevin Teo",
+    "Designation": "Chief Technology Officer and Head of ImpactCollab",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Kevin-Teo-AVPN2024.png",
+    "SortOrder": 35
   },
   {
     "ID": 53,
@@ -421,7 +357,15 @@
     "Name": "Kim Sinchioco",
     "Designation": "Senior Associate, Markets",
     "Image": "https://avpn.asia/wp-content/uploads/2023/03/Kim_Sinchioco-e1718861869328.webp",
-    "SortOrder": 44
+    "SortOrder": 36
+  },
+  {
+    "ID": 17,
+    "Team": "AVPN HQ",
+    "Name": "Komal Sahu",
+    "Designation": "Chief of Sustainable Finance",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/06/Komal-Sahu-AVPN2024.jpg",
+    "SortOrder": 37
   },
   {
     "ID": 54,
@@ -429,7 +373,7 @@
     "Name": "Kriti Raj Rai",
     "Designation": "Manager, Partnerships",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Kriti-Raj-Rai-AVPN2024.jpg",
-    "SortOrder": 45
+    "SortOrder": 38
   },
   {
     "ID": 55,
@@ -437,7 +381,15 @@
     "Name": "Kurt Peleman",
     "Designation": "Director, Special Projects",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Kurt-Peelman-AVPN2024.png",
-    "SortOrder": 46
+    "SortOrder": 39
+  },
+  {
+    "ID": 18,
+    "Team": "AVPN HQ",
+    "Name": "Madhavika Bajoria",
+    "Designation": "Executive Director, Health Impact",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Madhavika-Bajoria-AVPN2024.png",
+    "SortOrder": 40
   },
   {
     "ID": 56,
@@ -445,7 +397,7 @@
     "Name": "Madhura Badkilaya",
     "Designation": "Assistant Manager, Impact Investing",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Madhura-Badkilaya-AVPN2024.jpg",
-    "SortOrder": 47
+    "SortOrder": 41
   },
   {
     "ID": 57,
@@ -453,7 +405,7 @@
     "Name": "Mehar Kakkar",
     "Designation": "Senior Manager, Marketing & Communications",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Mehar-Kakkar-AVPN2024.png",
-    "SortOrder": 48
+    "SortOrder": 42
   },
   {
     "ID": 58,
@@ -461,7 +413,15 @@
     "Name": "Meryl Ligunas",
     "Designation": "Manager, Academy",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Meryl-Ligunas-AVPN2024.jpg",
-    "SortOrder": 49
+    "SortOrder": 43
+  },
+  {
+    "ID": 19,
+    "Team": "AVPN HQ",
+    "Name": "Moutushi Sengupta",
+    "Designation": "Chief of Capital Mobilisation, Executive Director, Gender Equality and South Asia Coordinator",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Moutushi-Sengupta-AVPN2024.png",
+    "SortOrder": 44
   },
   {
     "ID": 59,
@@ -469,7 +429,7 @@
     "Name": "Mridhula Sridharan",
     "Designation": "Senior Manager, Gender Equality Platform",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Mridhula-Sridharan-AVPN2024.jpg",
-    "SortOrder": 50
+    "SortOrder": 45
   },
   {
     "ID": 60,
@@ -477,7 +437,7 @@
     "Name": "Muskaan Khepla",
     "Designation": "Senior Associate, Health Impact",
     "Image": "https://avpn.asia/wp-content/uploads/2024/09/Muskaan-Khepla.webp",
-    "SortOrder": 51
+    "SortOrder": 46
   },
   {
     "ID": 61,
@@ -485,7 +445,7 @@
     "Name": "Nadya Pryana",
     "Designation": "Manager, Insights",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Nadya-Pryana-AVPN2024.jpg",
-    "SortOrder": 52
+    "SortOrder": 47
   },
   {
     "ID": 62,
@@ -493,7 +453,7 @@
     "Name": "Natasha Rynjah",
     "Designation": "Assistant Director, Capital Mobilisation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Natasha-Rynjah-AVPN2024.png",
-    "SortOrder": 53
+    "SortOrder": 48
   },
   {
     "ID": 63,
@@ -501,7 +461,7 @@
     "Name": "Nivedha Rangarajan",
     "Designation": "Senior Associate, Impact Investing",
     "Image": "https://avpn.asia/wp-content/uploads/2024/09/Nivedha-Rangarajan.webp",
-    "SortOrder": 54
+    "SortOrder": 49
   },
   {
     "ID": 64,
@@ -509,7 +469,7 @@
     "Name": "Noa Limpoco",
     "Designation": "Senior Associate, Gender Equality Platform",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Noa-Limpoco-AVPN2024.jpg",
-    "SortOrder": 55
+    "SortOrder": 50
   },
   {
     "ID": 65,
@@ -517,7 +477,7 @@
     "Name": "Patrick Yeung",
     "Designation": "Assistant Director, Climate Action",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Picture1-Patrick-Yeung-e1707098574271-1024x1024.jpg",
-    "SortOrder": 56
+    "SortOrder": 51
   },
   {
     "ID": 66,
@@ -525,7 +485,7 @@
     "Name": "Preeti Kailash Chandak",
     "Designation": "Finance Manager",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Preeti-Kailash-Chandak-AVPN2024.jpg",
-    "SortOrder": 57
+    "SortOrder": 52
   },
   {
     "ID": 67,
@@ -533,7 +493,7 @@
     "Name": "Ramkumar Venkatramani",
     "Designation": "South Asia Director, Impact Investing",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Ramkumar-Venkatramani-AVPN2024.webp",
-    "SortOrder": 58
+    "SortOrder": 53
   },
   {
     "ID": 68,
@@ -541,7 +501,7 @@
     "Name": "Rasikha Venkat",
     "Designation": "Assistant Director, Partnerships",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Rasikha-Venkat-AVPN2024.png",
-    "SortOrder": 59
+    "SortOrder": 54
   },
   {
     "ID": 69,
@@ -549,7 +509,7 @@
     "Name": "Raymond Chang",
     "Designation": "Manager, Digital Transformation",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Raymond-Chang-AVPN2024.png",
-    "SortOrder": 60
+    "SortOrder": 55
   },
   {
     "ID": 70,
@@ -557,7 +517,15 @@
     "Name": "Risa Nishida",
     "Designation": "Assistant Manager, Partnership",
     "Image": "https://avpn.asia/wp-content/uploads/2021/11/Risa-Nishida-AVPN2024.jpg",
-    "SortOrder": 61
+    "SortOrder": 56
+  },
+  {
+    "ID": 20,
+    "Team": "AVPN HQ",
+    "Name": "Roshini Prakash",
+    "Designation": "Chief Knowledge Officer and South East Asia Coordinator",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Roshini-Prakash-AVPN2024.png",
+    "SortOrder": 57
   },
   {
     "ID": 71,
@@ -565,7 +533,7 @@
     "Name": "Ruel Enriquez",
     "Designation": "Assistant Manager, Marketing",
     "Image": "https://avpn.asia/wp-content/uploads/2021/11/Ruel-Enriquez-AVPN2024.jpg",
-    "SortOrder": 62
+    "SortOrder": 58
   },
   {
     "ID": 72,
@@ -573,7 +541,15 @@
     "Name": "Rushika Shekhar",
     "Designation": "Director, Knowledge Products",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Rushika-Shekhar.webp",
-    "SortOrder": 63
+    "SortOrder": 59
+  },
+  {
+    "ID": 14,
+    "Team": "AVPN HQ",
+    "Name": "Ruth Jones",
+    "Designation": "Chief of  Markets",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Ruth-Jones-AVPN2024.png",
+    "SortOrder": 60
   },
   {
     "ID": 73,
@@ -581,7 +557,7 @@
     "Name": "Rutuja Phalake",
     "Designation": "Associate, Finance",
     "Image": "https://avpn.asia/wp-content/uploads/2024/08/Rushika-Shekhar-1.webp",
-    "SortOrder": 64
+    "SortOrder": 61
   },
   {
     "ID": 74,
@@ -589,7 +565,7 @@
     "Name": "Sangeetha Watson",
     "Designation": "Assistant Director, Insights",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Sangeetha-Watson-AVPN2024.png",
-    "SortOrder": 65
+    "SortOrder": 62
   },
   {
     "ID": 75,
@@ -597,7 +573,7 @@
     "Name": "Saransh Maheshwari",
     "Designation": "Senior Associate, Climate Action",
     "Image": "https://avpn.asia/wp-content/uploads/2021/11/Saransh-Maheshwari-AVPN2024.jpg",
-    "SortOrder": 66
+    "SortOrder": 63
   },
   {
     "ID": 76,
@@ -605,7 +581,7 @@
     "Name": "Seema Bhatia Panthaki",
     "Designation": "Director, Gender Equality Platform",
     "Image": "https://avpn.asia/wp-content/uploads/2021/11/Seema-Bhatia-Panthaki-AVPN2024.jpg",
-    "SortOrder": 67
+    "SortOrder": 64
   },
   {
     "ID": 77,
@@ -613,7 +589,7 @@
     "Name": "Shivani Bhore",
     "Designation": "Senior Associate, Finance",
     "Image": "https://avpn.asia/wp-content/uploads/2024/07/Shivani-Bhore-AVPN2024.webp",
-    "SortOrder": 68
+    "SortOrder": 65
   },
   {
     "ID": 78,
@@ -621,7 +597,23 @@
     "Name": "Siddharth Chatterjee",
     "Designation": "Senior Associate, Insights & Academy",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Siddharth-Chatterjee-AVPN2024.png",
-    "SortOrder": 69
+    "SortOrder": 66
+  },
+  {
+    "ID": 21,
+    "Team": "AVPN HQ",
+    "Name": "Susie Lim-Kannan",
+    "Designation": "Chief Marketing and Communications Officer",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Susie-Lim-Kannan-AVPN2024.png",
+    "SortOrder": 67
+  },
+  {
+    "ID": 22,
+    "Team": "AVPN HQ",
+    "Name": "Tristan Ace",
+    "Designation": "Chief Engagement Officer, Policy Head and Northeast Asia Coordinator",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Tristan-Ace-AVPN2024.png",
+    "SortOrder": 68
   },
   {
     "ID": 79,
@@ -629,6 +621,14 @@
     "Name": "Vaishali Anandkumar",
     "Designation": "Director, Finance & Administration",
     "Image": "https://avpn.asia/wp-content/uploads/2024/02/Vaishali-Anandkumar-AVPN2024.png",
+    "SortOrder": 69
+  },
+  {
+    "ID": 23,
+    "Team": "AVPN HQ",
+    "Name": "Vikas Arora",
+    "Designation": "Chief of Impact Investing",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/02/Vikas-Arora-AVPN2024.png",
     "SortOrder": 70
   },
   {
@@ -787,7 +787,7 @@
     "ID": 99,
     "Team": "Northeast Asia",
     "Name": "Catlyn Chen",
-    "Designation": "Senior Associate, Shanghai",
+    "Designation": "Senior Associate, China",
     "Image": "https://avpn.asia/wp-content/uploads/2024/01/Catlyn-Chen-AVPN2024.jpg",
     "SortOrder": 2
   },
@@ -803,9 +803,9 @@
     "ID": 101,
     "Team": "Northeast Asia",
     "Name": "Meryl Yang",
-    "Designation": "Senior Manager, Taipei",
+    "Designation": "Senior Manager, Taiwan",
     "Image": "https://avpn.asia/wp-content/uploads/2024/01/Meryl-Yang-AVPN2024.jpg",
-    "SortOrder": 4
+    "SortOrder": 5
   },
   {
     "ID": 102,
@@ -813,13 +813,13 @@
     "Name": "Luke Lin",
     "Designation": "Manager, Northeast Asia",
     "Image": "https://avpn.asia/wp-content/uploads/2024/01/Luke-Lin-AVPN2024.jpg",
-    "SortOrder": 5
+    "SortOrder": 4
   },
   {
     "ID": 103,
     "Team": "Northeast Asia",
     "Name": "Peixian Lu",
-    "Designation": "Senior Manager, Shanghai",
+    "Designation": "Senior Manager, China",
     "Image": "https://avpn.asia/wp-content/uploads/2024/06/Peixian-Lu-AVPN2024.jpg",
     "SortOrder": 6
   },
@@ -833,6 +833,14 @@
   },
   {
     "ID": 105,
+    "Team": "Northeast Asia",
+    "Name": "Yejin Jo",
+    "Designation": "Manager, South Korea",
+    "Image": "https://avpn.asia/wp-content/uploads/2024/10/Yejin-Jo-AVPN2024.webp",
+    "SortOrder": 8
+  },
+  {
+    "ID": 106,
     "Team": "West Asia",
     "Name": "Rabea Nawaz",
     "Designation": "Regional Director, West Asia",
@@ -840,7 +848,7 @@
     "SortOrder": 1
   },
   {
-    "ID": 106,
+    "ID": 107,
     "Team": "West Asia",
     "Name": "Fatima Asif",
     "Designation": "Associate, Pakistan",
@@ -848,7 +856,7 @@
     "SortOrder": 2
   },
   {
-    "ID": 107,
+    "ID": 108,
     "Team": "West Asia",
     "Name": "Fatima Faiq",
     "Designation": "Senior Associate, Pakistan",
@@ -856,7 +864,7 @@
     "SortOrder": 3
   },
   {
-    "ID": 108,
+    "ID": 109,
     "Team": "West Asia",
     "Name": "Tamara Ghandour",
     "Designation": "Assistant Manager, UAE and GCC",
@@ -864,7 +872,7 @@
     "SortOrder": 4
   },
   {
-    "ID": 109,
+    "ID": 110,
     "Team": "Global Markets",
     "Name": "Federico Marcon",
     "Designation": "Director, Global Markets and Partnerships",
@@ -872,7 +880,7 @@
     "SortOrder": 1
   },
   {
-    "ID": 110,
+    "ID": 111,
     "Team": "Global Markets",
     "Name": "Ina Barrameda",
     "Designation": "Manager, Global Markets",
@@ -880,7 +888,7 @@
     "SortOrder": 2
   },
   {
-    "ID": 111,
+    "ID": 112,
     "Team": "Global Markets",
     "Name": "Jonnabel Escartin",
     "Designation": "Associate, Global Markets",
@@ -888,7 +896,7 @@
     "SortOrder": 3
   },
   {
-    "ID": 112,
+    "ID": 113,
     "Team": "Global Markets",
     "Name": "Sharman Pandian",
     "Designation": "Director, Europe & UK",
