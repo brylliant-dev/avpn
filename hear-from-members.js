@@ -62,6 +62,10 @@ function getTestimonials() {
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             //Webflow.require('ix2').init();
+            if (!window.ix2Initialized) {
+                  Webflow.require('ix2').init();
+                  window.ix2Initialized = true;
+            }
         }
     };
 
