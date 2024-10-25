@@ -96,9 +96,6 @@ function getReflections() {
                 // Ensure the reflection is visible
                 reflection.style.display = 'flex';
 
-                // Add fade-in class for smooth transition
-                reflection.classList.add('fade-in');
-
                 // Append the cloned reflection to the reflections container
                 reflectionsContainer.appendChild(reflection);
 
@@ -121,9 +118,6 @@ function getReflections() {
 
                 // Ensure the slide is visible
                 slide.style.display = 'flex';
-
-                // Add fade-in class for smooth transition
-                slide.classList.add('fade-in');
 
                 // Append the cloned slide to the swiper-wrapper container for SwiperJS
                 slidesContainer.appendChild(slide);
@@ -163,33 +157,6 @@ function getReflections() {
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
             Webflow.require('ix2').init();
-
-            // Initialize Intersection Observer to trigger fade-in and position animations
-            const observerOptions = {
-                root: null, // null makes it relative to the viewport
-                rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-
-                        // Fade in the reflection smoothly using CSS classes
-                        target.classList.add('fade-in-visible');
-
-                        // Unobserve after triggering to prevent re-triggering the animation
-                        observer.unobserve(target);
-                    }
-                });
-            }, observerOptions);
-
-            // Apply observer to all reflection items
-            const allReflections = document.querySelectorAll('.fade-in');
-            allReflections.forEach((reflection, index) => {
-                observer.observe(reflection);
-            });
         }
     };
 
