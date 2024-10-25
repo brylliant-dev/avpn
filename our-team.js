@@ -110,7 +110,7 @@ function getTeamData() {
             Webflow.require('tabs').ready();
 
             // Reset Webflow interactions to apply IX to the new content
-            Webflow.require('ix2').init();
+            //Webflow.require('ix2').init();
         }
     };
 
