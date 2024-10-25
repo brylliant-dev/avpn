@@ -155,11 +155,17 @@ function getReflections() {
                 observeParents: true, // Also observe parent elements
             });
 
-            // Reinitialize Webflow interactions to ensure animations apply to the new elements
-            if (!window.ix2Initialized) {
-                  Webflow.require('ix2').init();
-                  window.ix2Initialized = true;
-            }
+            // Intersection Observer to reset ix2 interactions when container is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        Webflow.require('ix2').init(); // Reinitialize Webflow interactions
+                    }
+                });
+            });
+
+            // Start observing the reflections container
+            observer.observe(reflectionsContainer);
         }
     };
 
