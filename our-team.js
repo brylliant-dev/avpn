@@ -106,11 +106,15 @@ function getTeamData() {
                 });
             });
 
-            // Reinitialize Webflow tabs after populating content
-            Webflow.require('tabs').ready();
+            // Reinitialize Webflow tabs within requestAnimationFrame to reduce DOM load conflicts
+            requestAnimationFrame(() => {
+                Webflow.require('tabs').ready();
 
-            // Reset Webflow interactions to apply IX to the new content
-            //Webflow.require('ix2').init();
+                // Reset Webflow interactions after tabs are reinitialized
+                requestAnimationFrame(() => {
+                    Webflow.require('ix2').init();
+                });
+            });
         }
     };
 
