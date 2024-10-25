@@ -155,17 +155,9 @@ function getReflections() {
                 observeParents: true, // Also observe parent elements
             });
 
-            // Intersection Observer to reset ix2 interactions when container is in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        Webflow.require('ix2').init(); // Reinitialize Webflow interactions
-                    }
-                });
-            });
-
-            // Start observing the reflections container
-            observer.observe(reflectionsContainer);
+            // Reinitialize Webflow interactions to ensure animations apply to the new element
+            Webflow.require('ix2').init();
+        
         }
     };
 
