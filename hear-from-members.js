@@ -61,7 +61,7 @@ function getTestimonials() {
             templateTestimonial.remove();
 
             // Reinitialize Webflow interactions to ensure animations apply to the new elements
-            Webflow.require('ix2').init();
+            //Webflow.require('ix2').init();
         }
     };
 
