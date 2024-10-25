@@ -135,29 +135,32 @@ function getReflections() {
             templateReflection.remove();
             templateSlide.remove();
 
-            // Initialize SwiperJS after appending all slides
-            const swiper = new Swiper('.reflections_swiper', {
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                slidesPerView: 1, // Show only one slide at a time
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                loop: false, // No infinite loop to avoid swiper growing non-stop
-                observer: true, // Update Swiper when elements change
-                observeParents: true, // Also observe parent elements
+            // Initialize SwiperJS after appending all slides within requestAnimationFrame
+            requestAnimationFrame(() => {
+                const swiper = new Swiper('.reflections_swiper', {
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    slidesPerView: 1, // Show only one slide at a time
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    loop: false, // No infinite loop to avoid swiper growing non-stop
+                    observer: true, // Update Swiper when elements change
+                    observeParents: true, // Also observe parent elements
+                });
+                
+                // Reinitialize Webflow interactions after Swiper is set up
+                requestAnimationFrame(() => {
+                    Webflow.require('ix2').init();
+                });
             });
-
-            // Reinitialize Webflow interactions to ensure animations apply to the new element
-            //Webflow.require('ix2').init();
-        
         }
     };
 
