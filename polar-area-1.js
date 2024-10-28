@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chartContainer = document.getElementById("polar-area-1");
-    let myChart = null; // Variable to hold the polar area chart instance
-
-    // Define isMobile variable to check for mobile screens
-    const isMobile = window.innerWidth < 480;
+    let myChart = null;
 
     // Function to initialize the polar area chart
     function initializePolarAreaChart() {
@@ -25,50 +22,39 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Women and girls', color: '#c0deda', number: 62 },
         ];
 
-        const labels = [
-            'Children and youths',
-            'Elderly',
-            'Environment',
-            'Ethnic minorities',
-            ['Immigrants and asylum', 'seekers and refugees'],
-            ['Offenders and', 're-offenders'],
-            'People in poverty',
-            ['People with', 'disabilities'],
-            ['People with', 'medical needs'],
-            ['People without', 'employment'],
-            'Women and girls'
-        ]; // We can keep this in the code for references
-        const colors = [
-            '#00b4ae', '#f27c38', '#ffd552', '#007b69', '#39627a',
-            '#86d1d1', '#f59d6a', '#fee07e', '#80bdb4', '#9cb1bd',
-            '#c0deda', '#f9be9b', '#fee9a9', '#ced8de', '#c1e6e7'
-        ]; // We can keep this in the code for references
-
-        const chartNumbers = [65, 28, 44, 27, 14, 6, 58, 29, 30, 37, 62] // We can keep this in the code for references
-
-        const chartDataSorted = chartData.sort((a, b) => a.number > b.number ? -1 : 1); // Sort data from biggest to smallest number
-
+        const chartDataSorted = chartData.sort((a, b) => b.number - a.number);
         const data = {
             labels: chartDataSorted.map(cds => cds.label),
             datasets: [
                 {
                     label: 'Percentage',
                     data: chartDataSorted.map(cds => cds.number),
-                    backgroundColor: chartDataSorted.map(cds => cds.color).slice(0, labels.length),
+                    backgroundColor: chartDataSorted.map(cds => cds.color),
                     borderWidth: 1,
                     borderColor: "#E8F6FF",
                     borderRadius: 4,
-                    hoverBackgroundColor: colors.slice(0, labels.length)
+                    hoverBackgroundColor: chartDataSorted.map(cds => cds.color),
                 }
             ]
         };
+
         const fontSize = window.innerWidth < 480 ? 10 : 16;
+        const padding = window.innerWidth < 480 ? 10 : 20;
+
         myChart = new Chart(chartContainer, {
             type: 'polarArea',
             data: data,
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: padding,
+                        bottom: padding,
+                        left: padding,
+                        right: padding,
+                    }
+                },
                 scales: {
                     r: {
                         pointLabels: {
@@ -77,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             color: '#002944',
                             font: {
                                 size: fontSize,
-                                family: 'Open Sans'
+                                family: 'Open Sans',
                             }
                         },
                         ticks: {
@@ -100,8 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         },
                         callbacks: {
                             label: function (tooltipItem) {
-                                const percentage = tooltipItem.raw; // Directly use tooltipItem.raw for the percentage
-                                return `${percentage}%`;
+                                return `${tooltipItem.raw}%`;
                             }
                         }
                     }
@@ -116,16 +101,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function observeSwiperSlideChanges() {
         const swiperSlides = document.querySelectorAll('.review_members_slide.swiper-slide');
-        swiperSlides.forEach((slide, index) => {
+        swiperSlides.forEach(slide => {
             swiper.on('transitionEnd', function () {
-                if (slide.classList.contains('swiper-slide-active')) {
-                    if (slide.contains(chartContainer)) {
-                        initializePolarAreaChart();
-                    }
+                if (slide.classList.contains('swiper-slide-active') && slide.contains(chartContainer)) {
+                    initializePolarAreaChart();
                 }
             });
         });
     }
-    // Start observing Swiper slide changes
+
+    // Handle responsive chart re-initialization on window resize
+    window.addEventListener('resize', initializePolarAreaChart);
+
+    // Initialize the chart on first load and start observing Swiper slide changes
+    initializePolarAreaChart();
     observeSwiperSlideChanges();
 });
