@@ -47,6 +47,11 @@ function getReflections() {
             const reflectionsContainer = document.getElementById("reflections-container");
             const slidesContainer = document.querySelector(".reflections_swiper-wrapper");
 
+            // Create a new container for cloned elements
+            const clonedContainer = document.createElement('div');
+            clonedContainer.classList.add('cloned-elements-container');
+            reflectionsContainer.appendChild(clonedContainer);
+
             // Get the template reflection element and slide element that will be cloned
             const templateReflection = document.getElementById('reflection');
             const templateSlide = document.getElementById('ref-slide');
@@ -75,7 +80,7 @@ function getReflections() {
                 }
                 reflectionLocation.textContent = reflectionItem['Rep Location'];
                 reflection.style.display = 'flex';
-                reflectionsContainer.appendChild(reflection);
+                clonedContainer.appendChild(reflection); // Append to the new cloned container
 
                 // Populate slide content
                 const slideImg = slide.querySelector('.rep-image');
@@ -129,8 +134,8 @@ function getReflections() {
                 document.querySelector('.reflections_popup').style.display = 'block';
             }
 
-            // Use setTimeout to reset Webflow interactions
-            resetInteractions();
+            // Reset Webflow interactions specifically on cloned elements
+            resetInteractionsOnClonedElements();
         }
     };
 
@@ -138,10 +143,12 @@ function getReflections() {
     request.send();
 }
 
-// Function to reset Webflow interactions using setTimeout
-function resetInteractions() {
+// Function to reset Webflow interactions on cloned elements
+function resetInteractionsOnClonedElements() {
   setTimeout(() => {
-    Webflow.require('ix2').init();
+    Webflow.require('ix2').init({ 
+      containers: document.querySelectorAll('.cloned-elements-container')
+    });
   }, 100); // Adjust delay as needed
 }
 
