@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const chartContainer = document.getElementById("polar-area-1");
     let myChart = null; // Variable to hold the polar area chart instance
 
+    // Define isMobile variable to check for mobile screens
+    const isMobile = window.innerWidth < 480;
+
     // Function to initialize the polar area chart
     function initializePolarAreaChart() {
         if (myChart) {
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: ['People with', 'medical needs'], color: '#80bdb4', number: 30 },
             { label: ['People without', 'employment'], color: '#9cb1bd', number: 37 },
             { label: 'Women and girls', color: '#c0deda', number: 62 },
-        ]
+        ];
 
         const labels = [
             'Children and youths',
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const chartNumbers = [65, 28, 44, 27, 14, 6, 58, 29, 30, 37, 62] // We can keep this in the code for references
 
-        const chartDataSorted = chartData.sort((a, b) => a.number > b.number ? -1 : 1) // Sort data from biggest to smallest number
+        const chartDataSorted = chartData.sort((a, b) => a.number > b.number ? -1 : 1); // Sort data from biggest to smallest number
 
         const data = {
             labels: chartDataSorted.map(cds => cds.label),
@@ -117,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             swiper.on('transitionEnd', function () {
                 if (slide.classList.contains('swiper-slide-active')) {
                     if (slide.contains(chartContainer)) {
-                        initializePolarAreaChart()
+                        initializePolarAreaChart();
                     }
                 }
             });
@@ -125,5 +128,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Start observing Swiper slide changes
     observeSwiperSlideChanges();
-    
-})
+});
