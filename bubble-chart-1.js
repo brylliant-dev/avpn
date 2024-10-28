@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chartContainer = document.getElementById("bubble-chart-1");
-    let myChart = null; // Variable to hold the bubble chart instance
+    let myChart = null;
 
-    // Function to initialize the bubble chart
     function initializeBubbleChart() {
         if (myChart) {
             myChart.destroy();
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     label: 'Percentage',
                     data: chartData.map((cd, index) => ({
-                        x: isMobile ? cd.percentage : index, // Swap x and y values on mobile
+                        x: isMobile ? cd.percentage : index, 
                         y: isMobile ? index : cd.percentage,
                         r: scaleRadius(cd.percentage)
                     })),
@@ -54,11 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         };
 
-        const xFontSize = isMobile ? 8 : 14; // Smaller font size for mobile
-        const maxRotation = isMobile ? 90 : 45; // Increase rotation for better readability on mobile
-        const paddingBottom = isMobile ? 140 : 40; // Increase bottom padding for mobile
+        const xFontSize = isMobile ? 8 : 14;
+        const maxRotation = isMobile ? 90 : 45;
+        const paddingBottom = isMobile ? 140 : 40;
 
-        // Adjust scales based on mobile or desktop
         const scales = isMobile
             ? {
                 x: {
@@ -66,25 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     grid: { display: true, drawBorder: true },
                     ticks: {
                         color: '#002944',
-                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
-                        callback: function (value) { return value + '%'; },
+                        font: { family: 'Open Sans', size: xFontSize },
+                        callback: (value) => `${value}%`,
                         beginAtZero: true,
                         max: 70,
-                        stepSize: 10 // Set x-axis step size to 10 for mobile
+                        stepSize: 10
                     }
                 },
                 y: {
                     title: { display: false },
-                    grid: { display: true, drawBorder: true, drawOnChartArea: true },
+                    grid: { display: true, drawBorder: true },
                     ticks: {
                         color: '#002944',
-                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        font: { family: 'Open Sans', size: xFontSize },
                         min: 0,
                         max: labels.length - 1,
                         stepSize: 1,
                         autoSkip: false,
-                        callback: function (value) { return labels[value]; },
-                        maxRotation: maxRotation, // Adjust rotation for better readability
+                        callback: (value) => labels[value],
+                        maxRotation,
                         minRotation: 0
                     }
                 }
@@ -95,23 +93,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     grid: { display: true, drawBorder: true },
                     ticks: {
                         color: '#002944',
-                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
+                        font: { family: 'Open Sans', size: xFontSize },
                         min: 0,
                         max: labels.length - 1,
-                        stepSize: 1, // Regular increment for desktop
+                        stepSize: 1,
                         autoSkip: false,
-                        callback: function (value) { return labels[value]; },
-                        maxRotation: maxRotation, // Adjust rotation for better readability
+                        callback: (value) => labels[value],
+                        maxRotation,
                         minRotation: 0
                     }
                 },
                 y: {
                     title: { display: false },
-                    grid: { display: true, drawBorder: true, drawOnChartArea: true },
+                    grid: { display: true, drawBorder: true },
                     ticks: {
                         color: '#002944',
-                        font: { family: 'Open Sans', size: xFontSize }, // Adjust font size based on screen width
-                        callback: function (value) { return value + '%'; },
+                        font: { family: 'Open Sans', size: xFontSize },
+                        callback: (value) => `${value}%`,
                         beginAtZero: true,
                         max: 70
                     }
@@ -120,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         myChart = new Chart(chartContainer, {
             type: 'bubble',
-            data: data,
+            data,
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
@@ -132,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         bottom: paddingBottom
                     }
                 },
-                scales: scales,
+                scales,
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -147,37 +145,33 @@ document.addEventListener("DOMContentLoaded", function () {
                         callbacks: {
                             label: function (tooltipItem) {
                                 const label = labels[tooltipItem.dataIndex];
-                                const percentage = isMobile ? tooltipItem.raw.x : tooltipItem.raw.y; // Use y for desktop, x for mobile
-                                return `${percentage}%`;
+                                const percentage = isMobile ? tooltipItem.raw.x : tooltipItem.raw.y;
+                                return `${label}: ${percentage}%`;
                             }
                         }
                     }
                 },
                 animation: {
                     duration: 2000,
-                    delay: function (context) {
-                        const index = context.dataIndex;
-                        const delayBetweenPoints = 50;
-                        return index * delayBetweenPoints;
-                    }
+                    delay: (context) => context.dataIndex * 50
                 }
             }
         });
     }
 
-    // Function to observe when Swiper slide becomes active
     function observeSwiperSlideChanges() {
         const swiperSlides = document.querySelectorAll('.review_members_slide.swiper-slide');
-        swiperSlides.forEach((slide, index) => {
+        swiperSlides.forEach(slide => {
             swiper.on('transitionEnd', function () {
-                if (slide.classList.contains('swiper-slide-active')) {
-                    if (slide.contains(chartContainer)) {
-                        initializeBubbleChart();
-                    }
+                if (slide.classList.contains('swiper-slide-active') && slide.contains(chartContainer)) {
+                    initializeBubbleChart();
                 }
             });
         });
     }
-    // Start observing Swiper slide changes
+
+    window.addEventListener('resize', initializeBubbleChart);
+
+    initializeBubbleChart();
     observeSwiperSlideChanges();
 });
