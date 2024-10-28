@@ -101,25 +101,24 @@ function getTeamData() {
                         )
                     );
 
-                    // Append the list item into the unordered list inside the tab content
-                    $tabContent.find('ul.team-list').append($listItem);
+                    $tabContent.find('ul').append($listItem);
                 });
             });
 
-            // Reinitialize Webflow tabs within requestAnimationFrame to reduce DOM load conflicts
-            requestAnimationFrame(() => {
-                Webflow.require('tabs').ready();
-
-                // Reset Webflow interactions after tabs are reinitialized
-                requestAnimationFrame(() => {
-                    Webflow.require('ix2').init();
-                });
-            });
+            // Use setTimeout to reset Webflow interactions
+            resetInteractions();
         }
     };
 
     // Send the request to load the team data
     request.send();
+}
+
+// Function to reset Webflow interactions using setTimeout
+function resetInteractions() {
+  setTimeout(() => {
+    Webflow.require('ix2').init();
+  }, 200); // Adjust delay as needed
 }
 
 // Run the getTeamData function when the document is ready
