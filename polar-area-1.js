@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Elderly', color: '#f27c38', number: 28 },
             { label: 'Environment', color: '#ffd552', number: 44 },
             { label: 'Ethnic minorities', color: '#007b69', number: 27 },
-            { label: ['Immigrants,', 'asylum seekers,', 'and refugees'], color: '#39627a', number: 14 },
+            { label: ['Immigrants,', 'asylum seekers, and refugees'], color: '#39627a', number: 14 },
             { label: ['Offenders', 'and re-offenders'], color: '#86d1d1', number: 6 },
             { label: 'People in poverty', color: '#f59d6a', number: 58 },
             { label: ['People with', 'disabilities'], color: '#fee07e', number: 29 },
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         const isMobile = window.innerWidth < 480;
-        const fontSize = isMobile ? 7 : 14; // Smaller font size for mobile
+        const fontSize = isMobile ? 9 : 14; // Smaller font size for mobile
         const padding = isMobile ? 10 : 10; // Increased padding on mobile to prevent overlap
 
         myChart = new Chart(chartContainer, {
