@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         };
 
-        const fontSize = window.innerWidth < 480 ? 10 : 16;
-        const padding = window.innerWidth < 480 ? 10 : 20;
+        const isMobile = window.innerWidth < 480;
+        const fontSize = isMobile ? 8 : 14; // Smaller font size for mobile
+        const padding = isMobile ? 20 : 40; // Increased padding on mobile to prevent overlap
 
         myChart = new Chart(chartContainer, {
             type: 'polarArea',
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 size: fontSize,
                                 family: 'Open Sans',
                             },
-                            textAlign: 'center' // Center-align text for better readability
+                            textAlign: 'center'
                         },
                         ticks: {
                             display: false
