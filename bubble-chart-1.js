@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
         swiperSlides.forEach((slide, index) => {
             swiper.on('transitionEnd', function () {
                 if (slide.classList.contains('swiper-slide-active')) {
-                    if (slide contains(chartContainer)) {
+                    if (slide.contains(chartContainer)) {
                         initializeBubbleChart();
                     }
                 }
