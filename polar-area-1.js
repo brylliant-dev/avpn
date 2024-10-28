@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         const isMobile = window.innerWidth < 480;
-        const fontSize = isMobile ? 8 : 14; // Smaller font size for mobile
-        const padding = isMobile ? 20 : 50; // Increased padding on mobile to prevent overlap
+        const fontSize = isMobile ? 7 : 14; // Smaller font size for mobile
+        const padding = isMobile ? 30 : 40; // Increased padding on mobile to prevent overlap
 
         myChart = new Chart(chartContainer, {
             type: 'polarArea',
