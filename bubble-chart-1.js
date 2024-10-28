@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             label: function (tooltipItem) {
                                 const label = labels[tooltipItem.dataIndex];
                                 const percentage = isMobile ? tooltipItem.raw.x : tooltipItem.raw.y;
-                                return `${label}: ${percentage}%`;
+                                return `${percentage}%`;
                             }
                         }
                     }
