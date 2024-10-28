@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { label: 'Environment', color: '#ffd552', number: 44 },
             { label: 'Ethnic minorities', color: '#007b69', number: 27 },
             { label: ['Immigrants,', 'asylum seekers, and refugees'], color: '#39627a', number: 14 },
-            { label: ['Offenders', 'and re-offenders'], color: '#86d1d1', number: 6 },
+            { label: ['Offenders and re-offenders'], color: '#86d1d1', number: 6 },
             { label: 'People in poverty', color: '#f59d6a', number: 58 },
             { label: ['People with', 'disabilities'], color: '#fee07e', number: 29 },
             { label: ['People with', 'medical needs'], color: '#80bdb4', number: 30 },
