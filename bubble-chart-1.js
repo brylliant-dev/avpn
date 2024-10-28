@@ -147,9 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         },
                         callbacks: {
                             label: function (tooltipItem) {
-                                const label = labels[tooltipItem.dataIndex];
-                                const percentage = tooltipItem.raw.x; // Swap tooltip percentage display
-                                return `${label}, ${percentage}%`;
+                                //const percentage = tooltipItem.raw.x; // Swap tooltip percentage display
+                                return `${percentage}%`;
                             }
                         }
                     }
