@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         },
                         callbacks: {
                             label: function (tooltipItem) {
-                                return tooltipItem.raw + '%';
+                                const percentage = isMobile ? tooltipItem.raw.x : tooltipItem.raw.y; // Use x for mobile, y for desktop
+                                return `${percentage}%`; // Return only the percentage
                             }
                         }
                     }
