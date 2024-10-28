@@ -129,15 +129,20 @@ function getReflections() {
                 document.querySelector('.reflections_popup').style.display = 'block';
             }
 
-            // Reinitialize Webflow interactions to ensure animations apply to the new elements
-            requestAnimationFrame(() => {
-                Webflow.require('ix2').init();
-            });
+            // Use setTimeout to reset Webflow interactions
+            resetInteractions();
         }
     };
 
     // Send the request to load the reflections data
     request.send();
+}
+
+// Function to reset Webflow interactions using setTimeout
+function resetInteractions() {
+  setTimeout(() => {
+    Webflow.require('ix2').init();
+  }, 100); // Adjust delay as needed
 }
 
 // Run the getReflections function when the document is ready
