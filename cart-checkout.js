@@ -14,7 +14,7 @@
     return (Array.isArray(items) ? items : [])
       .map((it) => ({
         webflow_slug: it.webflow_slug || it.slug || "",
-        qty: Math.max(1, Number(it.qty || 1)),
+        qty: Math.max(1, Number(it.qty ?? it.quantity ?? it.count ?? 1)),
         meta: it.meta || { name: it.name, price: it.price, image: it.image, tag: it.tag, color: it.color }
       }))
       .filter((x) => x.webflow_slug);
@@ -101,7 +101,7 @@
 
     function updateCartItemCount(items) {
       if ($totalItem) {
-        const count = items.length;
+        const count = items.reduce((sum, item) => sum + Math.max(1, Number(item.qty || 1)), 0);
         if (typeof $ === "function") {
           $($totalItem).text(count);
         } else {
